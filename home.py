@@ -3,7 +3,7 @@ import GenSafety
 import PowerToolQuiz
 import HandToolQuiz
 
-class ButtonsDemo:
+class HomeClass:
     def __init__(self):
         window = Tk()
         Background = PhotoImage(file = "Images/MainTitlePage.gif")
@@ -32,4 +32,4 @@ class ButtonsDemo:
         HandToolQuiz.HTQuiz()
 
 
-ButtonsDemo()
+HomeClass()
