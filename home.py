@@ -1,5 +1,34 @@
-print("Hello World")
-print("this is another test")
-print("This is a test from my other pc")
-#another test that will probably not work
-#final test
+from Tkinter import *
+import GenSafety
+import PowerToolQuiz
+import HandToolQuiz
+
+class ButtonsDemo:
+    def __init__(self):
+        window = Tk()
+        Background = PhotoImage(file = "Images/MainTitlePage.gif")
+        BackgroundL = Label(window, image = Background)
+        BackgroundL.place(x=0,y=0,relwidth = 1, relheight=1)
+        window.title("Safety Quiz")
+        window.geometry("1000x800")
+        window.resizable(False, False)
+
+
+        GSButton = PhotoImage(file = "Images/GSButton.gif")
+        PTButton = PhotoImage(file = "Images/PTButton.gif")
+        HTButton = PhotoImage(file = "Images/HTButton.gif")
+
+        Button(image = GSButton, command = self.GenSafetyFunc).place(x=260, y=600, anchor = CENTER)
+        Button(image = PTButton, command = self.PowToolSafetyFunc).place(x=500, y=600, anchor = CENTER)
+        Button(image = HTButton, command = self.HanToolSafetyFunc).place(x=750, y=600, anchor = CENTER)
+        window.mainloop()
+
+    def GenSafetyFunc(self):
+        GenSafety.GSQuiz()
+    def PowToolSafetyFunc(self):
+        PowerToolQuiz.PTQuiz()
+    def HanToolSafetyFunc(self):
+        HandToolQuiz.HTQuiz()
+
+
+ButtonsDemo()
