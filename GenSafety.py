@@ -13,9 +13,37 @@ def GSQuiz():
     mycanvas.create_rectangle(0, 0, 1000, 8000, fill = "#38761d")
     mycanvas.pack(side = "top", fill = "both", expand = True)
 
-    title=Label(GSWindow,text= "General Safety", bg="red")
-    title.place(x=75,x=100,relwidth=1,relheight=1)
+    #title
+    title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#38761d",fg="white")
+    title.place(x=350,y=10)
 
+    #alternate wordbank
+    xPos=185
+    yPos=100
+    choicePos=[[],[]]
+    side1=mycanvas.create_line(25,75,25,250,width="3",fill="white")
+    side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
+    side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
+    side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
+    for x in range (len(choices)):
+        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        choicePos[0].append(xPos)
+        choicePos[1].append(yPos)
+        yPos=yPos+50
+        if x==2 or x==5 or x ==8:
+            xPos=xPos+185
+            yPos=100
+    """ Delete me   """
+    for y in range(len(choicePos[0])):
+        print(choicePos[0][y],",", choicePos[1][y])
+
+    """ Delete me   """
+    def strike(selected):
+        print(selected)
+        print(choices.index(selected))
+        wordPos=choices.index(selected)
+        print("wordPos: ",wordPos)
+        op1=mycanvas.create_text(choicePos[0][wordPos],choicePos[1,wordPos],text=choices[x],font=('Helvetica', 15,"overstrike"),fill="white")
 
     #WordbankGUI
     WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))
@@ -32,6 +60,7 @@ def GSQuiz():
     WordDropdown1 = OptionMenu(mycanvas, WordChoice1, *choices).place(x=350,y=320)
     def change_dropdown1(*args):
         print( WordChoice1.get() )
+        strike(WordChoice1.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
