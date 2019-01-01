@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 import GenSafety
 import PowerToolQuiz
 import HandToolQuiz
@@ -33,3 +33,14 @@ class HomeClass:
 
 
 HomeClass()
+
+
+"""
+problem 1 problem would not work, the was an error saying it could not find module Tkinter. This is because to use Tkinter you have to use a lower case t to call it so it would be tkinter
+method prior knowledge
+Solution: change all Tkinter to tkinter
+
+problem 2: not really a problem but more suggestion, change the name of Background variables to be more detailed on what they mean or at least add comments because it was hard to understand
+what you were doing with them
+
+"""
