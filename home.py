@@ -43,4 +43,7 @@ Solution: change all Tkinter to tkinter
 problem 2: not really a problem but more suggestion, change the name of Background variables to be more detailed on what they mean or at least add comments because it was hard to understand
 what you were doing with them
 
+problem 3: when creating window for general safety, it would appear before the main page window and the main page will only open when general safey was closed
+Method: prior knowledge I know that order matters and have done multiwindow programs before and if I want it to appear in a certain time I have to put it in an if statement that checks for the condition
+Solution: move code for creating a new window into the function being called when the button is pressed so it will only appear then
 """
