@@ -7,9 +7,15 @@ def GSQuiz():
     GSWindow.title("General Safety Quiz")
     GSWindow.geometry("1000x800")
     GSWindow.resizable(False,False)
+
+
     mycanvas = Canvas(GSWindow, width = 1000, height = 800)
     mycanvas.create_rectangle(0, 0, 1000, 8000, fill = "#38761d")
     mycanvas.pack(side = "top", fill = "both", expand = True)
+
+    title=Label(GSWindow,text= "General Safety", bg="red")
+    title.place(x=75,x=100,relwidth=1,relheight=1)
+
 
     #WordbankGUI
     WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))

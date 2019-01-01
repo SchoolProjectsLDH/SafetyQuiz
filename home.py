@@ -20,7 +20,7 @@ class HomeClass:
         Button(image = GSButton, command = self.GenSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=260, y=600, anchor = CENTER)
         Button(image = PTButton, command = self.PowToolSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=500, y=600, anchor = CENTER)
         Button(image = HTButton, command = self.HanToolSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=750, y=600, anchor = CENTER)
-        Button(image = QTButton, command = self.QuitQuiz, highlightbackground="#38761d", borderwidth=0).place(x=900, y=700, anchor = CENTER)
+        Button(image = QTButton, command = self.QuitQuiz, highlightbackground="#38761d", borderwidth=0).place(x=900, y=75, anchor = CENTER)
         window.mainloop()
 
     def GenSafetyFunc(self):
