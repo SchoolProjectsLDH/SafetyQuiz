@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 import GenSafety
 import PowerToolQuiz
 import HandToolQuiz
@@ -16,11 +16,11 @@ class HomeClass:
         GSButton = PhotoImage(file = "Images/GSButton.gif")
         PTButton = PhotoImage(file = "Images/PTButton.gif")
         HTButton = PhotoImage(file = "Images/HTButton.gif")
-
+        QTButton = PhotoImage(file = "Images/QuitButton.gif")
         Button(image = GSButton, command = self.GenSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=260, y=600, anchor = CENTER)
         Button(image = PTButton, command = self.PowToolSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=500, y=600, anchor = CENTER)
         Button(image = HTButton, command = self.HanToolSafetyFunc, highlightbackground="#38761d", borderwidth=0).place(x=750, y=600, anchor = CENTER)
-
+        Button(image = QTButton, command = self.QuitQuiz, highlightbackground="#38761d", borderwidth=0).place(x=900, y=700, anchor = CENTER)
         window.mainloop()
 
     def GenSafetyFunc(self):
@@ -32,6 +32,9 @@ class HomeClass:
     def HanToolSafetyFunc(self):
         window.destroy()
         HandToolQuiz.HTQuiz()
+    def QuitQuiz(self):
+        window.destroy()
+        exit()
 
 
 HomeClass()
