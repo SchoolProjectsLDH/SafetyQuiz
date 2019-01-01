@@ -1,14 +1,13 @@
-from tkinter import *
+from Tkinter import *
 import GenSafety
 import PowerToolQuiz
 import HandToolQuiz
-
+window = Tk()
 class HomeClass:
     def __init__(self):
-        window = Tk()
-        Background = PhotoImage(file = "Images/MainTitlePage.gif")
-        BackgroundL = Label(window, image = Background)
-        BackgroundL.place(x=0,y=0,relwidth = 1, relheight=1)
+        BackgroundImage = PhotoImage(file = "Images/MainTitlePage.gif")
+        BackgroundLabel = Label(window, image = BackgroundImage)
+        BackgroundLabel.place(x=0,y=0,relwidth = 1, relheight=1)
         window.title("Safety Quiz")
         window.geometry("1000x800")
         window.resizable(False, False)
@@ -25,25 +24,14 @@ class HomeClass:
         window.mainloop()
 
     def GenSafetyFunc(self):
+        window.destroy()
         GenSafety.GSQuiz()
     def PowToolSafetyFunc(self):
+        window.destroy()
         PowerToolQuiz.PTQuiz()
     def HanToolSafetyFunc(self):
+        window.destroy()
         HandToolQuiz.HTQuiz()
 
 
 HomeClass()
-
-
-"""
-problem 1 problem would not work, the was an error saying it could not find module Tkinter. This is because to use Tkinter you have to use a lower case t to call it so it would be tkinter
-method prior knowledge
-Solution: change all Tkinter to tkinter
-
-problem 2: not really a problem but more suggestion, change the name of Background variables to be more detailed on what they mean or at least add comments because it was hard to understand
-what you were doing with them
-
-problem 3: when creating window for general safety, it would appear before the main page window and the main page will only open when general safey was closed
-Method: prior knowledge I know that order matters and have done multiwindow programs before and if I want it to appear in a certain time I have to put it in an if statement that checks for the condition
-Solution: move code for creating a new window into the function being called when the button is pressed so it will only appear then
-"""
