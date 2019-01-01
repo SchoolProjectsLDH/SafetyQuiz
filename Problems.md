@@ -64,3 +64,11 @@ reason: because it still is greater than 4 so it is reseting y back to origional
 solution change it from >=4 to ==4
 problem 4 goes outside box
 solution: change 4 to 3
+problem: when crossing out the word it would say that it wants a int not a tuple
+- trial and error
+- print out the outputs
+- instead of the index command as a parameter for the list use a variable that is set to the index command value
+- realize that I am using the list completely wrong and change it to [][] and not [#,#]
+problem rewriting unplug on the selected something
+- prior knowledge:
+ i copied paste the code from the for loop that prints the words, so it must still have x as its parameters and x is the value of unplug
