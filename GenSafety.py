@@ -39,7 +39,7 @@ def GSQuiz():
 
     """ Delete me   """
     def strike(selected):
-        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1,choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="white")
+        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="white")
 
     #WordbankGUI
     WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))
