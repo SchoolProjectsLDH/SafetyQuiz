@@ -12,7 +12,6 @@ def GSQuiz():
     GSWindow.geometry("1000x800")
     GSWindow.resizable(False,False)
 
-
     mycanvas = Canvas(GSWindow, width = 1000, height = 800)
     mycanvas.create_rectangle(0, 0, 1000, 8000, fill = "#38761d")
     mycanvas.pack(side = "top", fill = "both", expand = True)
@@ -22,27 +21,32 @@ def GSQuiz():
     title.place(x=350,y=10)
 
     #alternate wordbank
-    xPos=185
+    xPos=125
     yPos=100
     choicePos=[[],[]]
     side1=mycanvas.create_line(25,75,25,250,width="3",fill="white")
     side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
-    for x in range (len(choices)):
+    for x in range (0,6):
         op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         choicePos[0].append(xPos)
         choicePos[1].append(yPos)
-        yPos=yPos+50
-        if x==2 or x==5 or x ==8:
-            xPos=xPos+185
-            yPos=100
-    """ Delete me   """
+        xPos=xPos+185
+    xPos = 125
+    yPos = 175
+    for x in range (5,10):
+        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        choicePos[0].append(xPos)
+        choicePos[1].append(yPos)
+        xPos=xPos+185
+
+
     for y in range(len(choicePos[0])):
         print(choicePos[0][y],",", choicePos[1][y])
-    """ Delete me   """
+
     def strike(selected):
-        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="white")
+        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
 
     #WordbankGUI
     WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))
@@ -140,6 +144,8 @@ def GSQuiz():
                 WordList.insert(iteration, choices[iteration])
     WordChoice6.trace('w', change_dropdown6)
 
+
+    #QUESTION 7---
     text_canvas = mycanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q7: This is a filler text")
     WordChoice7 = StringVar(GSWindow)
@@ -153,6 +159,8 @@ def GSQuiz():
                 WordList.insert(iteration, choices[iteration])
     WordChoice7.trace('w', change_dropdown7)
 
+
+    #QUESTION 8---
     text_canvas = mycanvas.create_text(25, 605, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q8: It is okay to bring a drink into the shop as long as none of the equipment is running. ->")
     WordChoice8 = StringVar(GSWindow)
@@ -167,6 +175,7 @@ def GSQuiz():
     WordChoice8.trace('w', change_dropdown8)
 
 
+    #QUESTION 9---
     text_canvas = mycanvas.create_text(25, 645, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q9: Once you have received your equipment certification you may use the equipment any time without permission. ->")
     WordChoice9 = StringVar(GSWindow)
@@ -181,7 +190,7 @@ def GSQuiz():
     WordChoice9.trace('w', change_dropdown9)
 
 
-
+    #QUESTION 10---
     text_canvas = mycanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q10:                                       the tool/machine before replacing broken, dull or damaged bits or blades.")
     WordChoice10 = StringVar(GSWindow)
