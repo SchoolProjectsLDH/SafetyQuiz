@@ -72,3 +72,16 @@ problem: when crossing out the word it would say that it wants a int not a tuple
 problem rewriting unplug on the selected something
 - prior knowledge:
  i copied paste the code from the for loop that prints the words, so it must still have x as its parameters and x is the value of unplug
+
+
+
+problem 8: unable to append to saves
+- trial and error
+- first tried .append, but that is not a command you have to use .write
+- tried changing the type of file it is (a,w,r)
+- tried printing it
+- tried it python ide - it worked
+- prior knowledge
+  - thought that the code will not get there since it is looping the canvas with canvas.mainloop()
+  - since I know order matters maybe it has to be before the aforementioned command to work.
+  - so tried putting it before it and it worked
