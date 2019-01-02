@@ -19,7 +19,8 @@ def ReturnMark(ans):
     for iteration in range(0,len(ans)):
         if ans[iteration] == True:
             correct += 1
-    Label(canvas,text="You got "+str(correct)+" out of 10 correct",font=("Helvetica",20),bg="#38761d",fg="white").place(x=500,y=200, anchor=CENTER)
-
+    Label(canvas,text="You got {} out of 10 correct".format(correct),font=("Helvetica",20),bg="#38761d",fg="white").place(x=500,y=200, anchor=CENTER)
+    percent=Label(canvas,text="{}{}".format((correct/10)*100,"%"),font=("Helvetica",60),fg="white",bg="#38761d")
+    percent.place(x=400,y=350)
     print(ans)
     ResWindow.mainloop()
