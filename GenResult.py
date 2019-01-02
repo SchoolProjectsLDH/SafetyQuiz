@@ -22,7 +22,6 @@ def ReturnMark(ans):
     mark = (correct/10)*100
     text = str(mark) + "%"
     Label(canvas,text="You got {} out of 10 correct".format(int(correct)),font=("Helvetica",20),bg="#38761d",fg="white").place(x=500,y=200, anchor=CENTER)
-    Label(canvas,text=text,font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
     Label(canvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
     print(ans)
     saves.write(str(text) + "\n---")
