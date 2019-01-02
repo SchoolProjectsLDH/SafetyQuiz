@@ -1,11 +1,13 @@
 from sys import version_info
+import GenResult
 if version_info.major == 2:
     from Tkinter import *
 elif version_info.major == 3:
     from tkinter import *
 
 def GSQuiz():
-    choices = ["True", "T", "Permission", "Certificate", "Push Stick", "Clean", "XXX", "F", "False", "Unplug"]
+    choices = ["True", "Yes", "Permission", "Certificate", "Push Stick", "Clean", "XXX", "No", "False", "Unplug"]
+    CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     print("GenSafety quiz")
     GSWindow = Tk()
     GSWindow.title("General Safety Quiz")
@@ -49,15 +51,7 @@ def GSQuiz():
         for iteration in range(0,10):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
                 mycanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
-
         op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15),fill="red")
-
-    #WordbankGUI
-    WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))
-    for iteration in range(0,len(choices)):
-        WordList.insert(iteration, choices[iteration])
-
-    WordList.place(x=800,y=300)
 
     #QUESTION 1---
     text_canvas = mycanvas.create_text(25, 325, anchor = "nw", font=('Helvetica', 15), fill="white")
@@ -68,10 +62,12 @@ def GSQuiz():
     def change_dropdown1(*args):
         print( WordChoice1.get() )
         strike(WordChoice1.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
+        if WordChoice1.get() == "False" or WordChoice1.get() == "No":
+            CheckCorrect[0] = True
+            print(CheckCorrect)
+        else:
+            CheckCorrect[0] = False
+            print(CheckCorrect)
 
     WordChoice1.trace('w', change_dropdown1)
 
@@ -85,10 +81,6 @@ def GSQuiz():
     def change_dropdown2(*args):
         print( WordChoice2.get() )
         strike(WordChoice2.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice2.trace('w', change_dropdown2)
 
 
@@ -101,10 +93,6 @@ def GSQuiz():
     def change_dropdown3(*args):
         print( WordChoice3.get() )
         strike(WordChoice3.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
@@ -116,10 +104,6 @@ def GSQuiz():
     def change_dropdown4(*args):
         print( WordChoice4.get() )
         strike(WordChoice4.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
@@ -131,10 +115,6 @@ def GSQuiz():
     def change_dropdown5(*args):
         print( WordChoice5.get() )
         strike(WordChoice5.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice5.trace('w', change_dropdown5)
 
 
@@ -147,10 +127,6 @@ def GSQuiz():
     def change_dropdown6(*args):
         print( WordChoice6.get() )
         strike(WordChoice6.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice6.trace('w', change_dropdown6)
 
 
@@ -163,10 +139,6 @@ def GSQuiz():
     def change_dropdown7(*args):
         print( WordChoice7.get() )
         strike(WordChoice7.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice7.trace('w', change_dropdown7)
 
 
@@ -179,10 +151,6 @@ def GSQuiz():
     def change_dropdown8(*args):
         print( WordChoice8.get() )
         strike(WordChoice8.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice8.trace('w', change_dropdown8)
 
 
@@ -195,10 +163,6 @@ def GSQuiz():
     def change_dropdown9(*args):
         print( WordChoice9.get() )
         strike(WordChoice9.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice9.trace('w', change_dropdown9)
 
 
@@ -211,11 +175,13 @@ def GSQuiz():
     def change_dropdown10(*args):
         print( WordChoice10.get() )
         strike(WordChoice10.get())
-        WordList.delete(0,END)
-        for iteration in range(0,len(choices)):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                WordList.insert(iteration, choices[iteration])
     WordChoice10.trace('w', change_dropdown10)
 
+    #SUBMITBUTTON---
+    def GetResult():
+        GSWindow.destroy()
+        GenResult.ReturnMark(CheckCorrect)
+    #SubButton = PhotoImage(file = "Images/Submit.gif") --Not working
+    Button(mycanvas, text="Submit Answers", command=GetResult).place(x=850,y=700)
 
     GSWindow.mainloop()

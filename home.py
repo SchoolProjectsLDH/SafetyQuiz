@@ -30,13 +30,13 @@ class HomeClass:
         window.mainloop()
 
     def GenSafetyFunc(self):
-        window.destroy()
+        window.iconify()
         GenSafety.GSQuiz()
     def PowToolSafetyFunc(self):
-        window.destroy()
+        window.iconify()
         PowerToolQuiz.PTQuiz()
     def HanToolSafetyFunc(self):
-        window.destroy()
+        window.iconify()
         HandToolQuiz.HTQuiz()
     def QuitQuiz(self):
         window.destroy()
