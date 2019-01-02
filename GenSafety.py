@@ -28,7 +28,7 @@ def GSQuiz():
     side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
-    for x in range (0,6):
+    for x in range (0,5):
         op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         choicePos[0].append(xPos)
         choicePos[1].append(yPos)
@@ -46,7 +46,7 @@ def GSQuiz():
         print(choicePos[0][y],",", choicePos[1][y])
 
     def strike(selected):
-        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
+        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15),fill="red")
 
     #WordbankGUI
     WordList = Listbox(mycanvas, background = "#38761d", fg = "white", font = ("Helvetica", 16))
@@ -80,6 +80,7 @@ def GSQuiz():
     WordDropdown2 = OptionMenu(mycanvas, WordChoice2, *choices).place(x=545,y=360)
     def change_dropdown2(*args):
         print( WordChoice2.get() )
+        strike(WordChoice2.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -95,6 +96,7 @@ def GSQuiz():
     WordDropdown3 = OptionMenu(mycanvas, WordChoice3, *choices).place(x=140,y=400)
     def change_dropdown3(*args):
         print( WordChoice3.get() )
+        strike(WordChoice3.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -109,6 +111,7 @@ def GSQuiz():
     WordDropdown4 = OptionMenu(mycanvas, WordChoice4, *choices).place(x=490,y=440)
     def change_dropdown4(*args):
         print( WordChoice4.get() )
+        strike(WordChoice4.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -123,6 +126,7 @@ def GSQuiz():
     WordDropdown5 = OptionMenu(mycanvas, WordChoice5, *choices).place(x=100,y=480)
     def change_dropdown5(*args):
         print( WordChoice5.get() )
+        strike(WordChoice5.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -138,6 +142,7 @@ def GSQuiz():
     WordDropdown6 = OptionMenu(mycanvas, WordChoice6, *choices).place(x=120,y=520)
     def change_dropdown6(*args):
         print( WordChoice6.get() )
+        strike(WordChoice6.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -153,6 +158,7 @@ def GSQuiz():
     WordDropdown7 = OptionMenu(mycanvas, WordChoice7, *choices).place(x=490,y=560)
     def change_dropdown7(*args):
         print( WordChoice7.get() )
+        strike(WordChoice7.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -168,6 +174,7 @@ def GSQuiz():
     WordDropdown8 = OptionMenu(mycanvas, WordChoice8, *choices).place(x=615,y=600)
     def change_dropdown8(*args):
         print( WordChoice8.get() )
+        strike(WordChoice8.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -183,6 +190,7 @@ def GSQuiz():
     WordDropdown9 = OptionMenu(mycanvas, WordChoice9, *choices).place(x=785,y=640)
     def change_dropdown9(*args):
         print( WordChoice9.get() )
+        strike(WordChoice9.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
@@ -198,6 +206,7 @@ def GSQuiz():
     WordDropdown10 = OptionMenu(mycanvas, WordChoice10, *choices).place(x=65,y=680)
     def change_dropdown10(*args):
         print( WordChoice10.get() )
+        strike(WordChoice10.get())
         WordList.delete(0,END)
         for iteration in range(0,len(choices)):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
