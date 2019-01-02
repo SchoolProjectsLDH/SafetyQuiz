@@ -1,4 +1,8 @@
-from tkinter import *
+from sys import version_info
+if version_info.major == 2:
+    from Tkinter import *
+elif version_info.major == 3:
+    from tkinter import *
 
 def GSQuiz():
     choices = ["True", "T", "Permission", "Certificate", "Push Stick", "Clean", "XXX", "F", "False", "Unplug"]
@@ -36,7 +40,6 @@ def GSQuiz():
     """ Delete me   """
     for y in range(len(choicePos[0])):
         print(choicePos[0][y],",", choicePos[1][y])
-
     """ Delete me   """
     def strike(selected):
         op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="white")

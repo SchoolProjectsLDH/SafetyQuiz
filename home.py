@@ -1,4 +1,10 @@
-from tkinter import *
+from sys import version_info
+if version_info.major == 2:
+    from Tkinter import *
+elif version_info.major == 3:
+    from tkinter import *
+
+
 import GenSafety
 import PowerToolQuiz
 import HandToolQuiz
