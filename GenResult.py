@@ -4,10 +4,11 @@ if version_info.major == 2:
 elif version_info.major == 3:
     from tkinter import *
 
-saves=open("saves","w")
+
 
 def ReturnMark(ans):
     correct = 0
+    saves=open("saves","a")
     print("Result")
     ResWindow=Tk()
     ResWindow.title("Result")
@@ -26,9 +27,6 @@ def ReturnMark(ans):
     percent=Label(canvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="#38761d")
     percent.place(x=400,y=350)
     print(ans)
+    saves.write(str(mark))
+    saves.close()
     ResWindow.mainloop()
-    saves.append(mark)
-    saves.close()
-    saves.open("saves","r")
-    saves.read()
-    saves.close()
