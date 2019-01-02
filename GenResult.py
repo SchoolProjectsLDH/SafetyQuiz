@@ -27,7 +27,7 @@ def ReturnMark(ans):
     percent.place(x=400,y=350)
     print(ans)
     ResWindow.mainloop()
-    saves.apped(mark)
+    saves.append(mark)
     saves.close()
     saves.open("saves","r")
     saves.read()
