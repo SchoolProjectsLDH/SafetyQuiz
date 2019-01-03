@@ -1,3 +1,10 @@
+IMPORTANT NOTE
+-
+This is a temporary file for listing the problems we have enchountered during our project. For a more complete rundown of what happened, see the *issues* tab.
+
+Problems
+-
+
 Problem 1: the problem would not work, there was an error saying it could not find module Tkinter. This is because to use Tkinter you have to use a lower case _t_ to call it so it would be tkinter
 method prior knowledge
 
