@@ -115,4 +115,8 @@ problem 13: false was not showing in word blank
 - reason: the if statement to change lines had it so after the 5th word (which would be 6th word in reality) would change to the next line, therefore putting false outside the window and making it invisible
 
 problem 14: unable to import powResults
-reason had to had .py at end 
+reason had to had .py at end
+
+problem 15: last couple questions on power doc gave wrong answers even if correct
+- reason writing to checkcalling[9] and not its own one
+- was giving different parameters to striking then the ones that were required (10 instead of 14 if it was the last question)

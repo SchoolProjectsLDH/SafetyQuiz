@@ -240,10 +240,10 @@ def PTQuiz():
         print( WordChoice11.get() )
         strike(WordChoice11.get())
         if WordChoice11.get()=="Waste":
-            CheckCorrect[9]=True
+            CheckCorrect[10]=True
             print(CheckCorrect)
         else:
-            CheckCorrect[9]=False
+            CheckCorrect[10]=False
             print(CheckCorrect)
     WordChoice11.trace('w', change_dropdown11)
 
@@ -258,10 +258,10 @@ def PTQuiz():
         print( WordChoice12.get() )
         strike(WordChoice12.get())
         if WordChoice10.get()=="Lock Out":
-            CheckCorrect[9]=True
+            CheckCorrect[11]=True
             print(CheckCorrect)
         else:
-            CheckCorrect[9]=False
+            CheckCorrect[11]=False
             print(CheckCorrect)
     WordChoice12.trace('w', change_dropdown12)
 
@@ -273,13 +273,13 @@ def PTQuiz():
     WordChoice13.set('Answer Here')
     WordDropdown13 = OptionMenu(mycanvas, WordChoice13, *choices).place(x=100,y=720)
     def change_dropdown13(*args):
-        print( WordChoice10.get() )
-        strike(WordChoice10.get())
+        print( WordChoice13.get() )
+        strike(WordChoice13.get())
         if WordChoice10.get()=="Break":
-            CheckCorrect[9]=True
+            CheckCorrect[12]=True
             print(CheckCorrect)
         else:
-            CheckCorrect[9]=False
+            CheckCorrect[12]=False
             print(CheckCorrect)
     WordChoice13.trace('w', change_dropdown13)
 
@@ -287,13 +287,13 @@ def PTQuiz():
     WordChoice14.set('Answer Here')
     WordDropdown14 = OptionMenu(mycanvas, WordChoice14, *choices).place(x=240,y=720)
     def change_dropdown14(*args):
-        print( WordChoice10.get() )
-        strike(WordChoice10.get())
+        print( WordChoice14.get() )
+        strike(WordChoice14.get())
         if WordChoice14.get()=="Bind":
-            CheckCorrect[9]=True
+            CheckCorrect[13]=True
             print(CheckCorrect)
         else:
-            CheckCorrect[9]=False
+            CheckCorrect[13]=False
             print(CheckCorrect)
     WordChoice14.trace('w', change_dropdown14)
 

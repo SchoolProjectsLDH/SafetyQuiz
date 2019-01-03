@@ -20,10 +20,10 @@ def ReturnMark(ans):
         if ans[iteration] == True:
             correct += 1
     mark = (correct/14)*100
-    text = str(mark) + "%"
+    text = str(round(mark,2)) + "%"
     Label(canvas,text="You got {} out of 14 correct".format(int(correct)),font=("Helvetica",20),bg="#38761d",fg="white").place(x=500,y=200, anchor=CENTER)
-    Label(canvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
+    Label(canvas,text=text,font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
     print(ans)
-    saves.write("Power Tool Quiz: ",str(text) + "\n---")
+    saves.write("Power Tool Quiz: {}".format(str(text)) + "\n")
     saves.close()
     ResWindow.mainloop()
