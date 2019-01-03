@@ -23,6 +23,7 @@ def GSQuiz():
     title.place(x=350,y=10)
 
     #alternate wordbank
+        #the box
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -30,6 +31,7 @@ def GSQuiz():
     side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
+        #printing the words
     for x in range (0,5):
         op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         choicePos[0].append(xPos)
