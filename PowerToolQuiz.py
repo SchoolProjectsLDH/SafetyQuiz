@@ -62,15 +62,11 @@ def PTQuiz():
     WordDropdown1 = OptionMenu(PTcanvas, WordChoice1, *choices).place(x=165,y=280)
 
     def change_dropdown1(*args):
-        print( WordChoice1.get() )
         strike(WordChoice1.get())
         if WordChoice1.get() == "Jewelery":
             CheckCorrect[0] = True
-            print(CheckCorrect)
         else:
             CheckCorrect[0] = False
-            print(CheckCorrect)
-
     WordChoice1.trace('w', change_dropdown1)
 
     #QUESTION 1 box 2---
@@ -78,15 +74,11 @@ def PTQuiz():
     WordChoice2.set('Answer Here')
     WordDropdown2 = OptionMenu(PTcanvas, WordChoice2, *choices).place(x=390,y=280)
     def change_dropdown2(*args):
-        print( WordChoice2.get() )
         strike(WordChoice2.get())
-
         if WordChoice2.get()=="Long":
             CheckCorrect[1]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[1]==False
-            print(CheckCorrect)
     WordChoice2.trace('w', change_dropdown2)
 
 
@@ -97,14 +89,11 @@ def PTQuiz():
     WordChoice3.set('Answer Here')
     WordDropdown3 = OptionMenu(PTcanvas, WordChoice3, *choices).place(x=160,y=320)
     def change_dropdown3(*args):
-        print( WordChoice3.get() )
         strike(WordChoice3.get())
         if WordChoice3.get()=="Kickbacks":
             CheckCorrect[2]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[2]=False
-            print(CheckCorrect)
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 3---
@@ -114,14 +103,11 @@ def PTQuiz():
     WordChoice4.set('Answer Here')
     WordDropdown4 = OptionMenu(PTcanvas, WordChoice4, *choices).place(x=200,y=360)
     def change_dropdown4(*args):
-        print( WordChoice4.get() )
         strike(WordChoice4.get())
         if WordChoice4.get()=="Angular":
             CheckCorrect[3]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[3]=False
-            print(CheckCorrect)
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 4---
@@ -132,28 +118,22 @@ def PTQuiz():
     WordChoice5.set('Answer Here')
     WordDropdown5 = OptionMenu(PTcanvas, WordChoice5, *choices).place(x=425,y=400)
     def change_dropdown5(*args):
-        print( WordChoice5.get() )
         strike(WordChoice5.get())
         if WordChoice5.get()=="Front":
             CheckCorrect[4]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[4]=False
-            print(CheckCorrect)
     WordChoice5.trace('w', change_dropdown5)
 
     WordChoice6 = StringVar(PTWindow)
     WordChoice6.set('Answer Here')
     WordDropdown6 = OptionMenu(PTcanvas, WordChoice6, *choices).place(x=700,y=400)
     def change_dropdown6(*args):
-        print( WordChoice6.get() )
         strike(WordChoice6.get())
         if WordChoice6.get()=="Side":
             CheckCorrect[5]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[5]=False
-            print(CheckCorrect)
     WordChoice6.trace('w', change_dropdown6)
 
     #QUESTION 6---
@@ -163,14 +143,11 @@ def PTQuiz():
     WordChoice7.set('Answer Here')
     WordDropdown7 = OptionMenu(PTcanvas, WordChoice7, *choices).place(x=380,y=440)
     def change_dropdown7(*args):
-        print( WordChoice7.get() )
         strike(WordChoice7.get())
         if WordChoice7.get()=="Speed":
             CheckCorrect[6]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[6]=False
-            print(CheckCorrect)
     WordChoice7.trace('w', change_dropdown7)
 
     #QUESTION 7---
@@ -181,14 +158,11 @@ def PTQuiz():
     WordChoice8.set('Answer Here')
     WordDropdown8 = OptionMenu(PTcanvas, WordChoice8, *choices).place(x=220,y=480)
     def change_dropdown8(*args):
-        print( WordChoice8.get() )
         strike(WordChoice8.get())
         if WordChoice8.get()=="Grab":
             CheckCorrect[7]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[7]=False
-            print(CheckCorrect)
     WordChoice8.trace('w', change_dropdown8)
 
 
@@ -202,27 +176,21 @@ def PTQuiz():
     WordChoice9.set('Answer Here')
     WordDropdown9 = OptionMenu(PTcanvas, WordChoice9, *choices).place(x=125,y=520)
     def change_dropdown9(*args):
-        print( WordChoice9.get() )
         strike(WordChoice9.get())
         if WordChoice9.get()=="Pull":
             CheckCorrect[8]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[8]=False
-            print(CheckCorrect)
     WordChoice9.trace('w', change_dropdown9)
     WordChoice10 = StringVar(PTWindow)
     WordChoice10.set('Answer Here')
     WordDropdown10 = OptionMenu(PTcanvas, WordChoice10, *choices).place(x=755,y=520)
     def change_dropdown10(*args):
-        print( WordChoice10.get() )
         strike(WordChoice10.get())
         if WordChoice10.get()=="Machine":
             CheckCorrect[9]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[9]=False
-            print(CheckCorrect)
     WordChoice10.trace('w', change_dropdown10)
     #QUESTION 9---
 
@@ -232,14 +200,11 @@ def PTQuiz():
     WordChoice11.set('Answer Here')
     WordDropdown11 = OptionMenu(PTcanvas, WordChoice11, *choices).place(x=595,y=600)
     def change_dropdown11(*args):
-        print( WordChoice11.get() )
         strike(WordChoice11.get())
         if WordChoice11.get()=="Waste":
             CheckCorrect[10]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[10]=False
-            print(CheckCorrect)
     WordChoice11.trace('w', change_dropdown11)
 
 
@@ -250,14 +215,11 @@ def PTQuiz():
     WordChoice12.set('Answer Here')
     WordDropdown12 = OptionMenu(PTcanvas, WordChoice12, *choices).place(x=135,y=640)
     def change_dropdown12(*args):
-        print( WordChoice12.get() )
         strike(WordChoice12.get())
         if WordChoice10.get()=="Lock Out":
             CheckCorrect[11]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[11]=False
-            print(CheckCorrect)
     WordChoice12.trace('w', change_dropdown12)
 
     text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")    #SUBMITBUTTON---
@@ -268,28 +230,22 @@ def PTQuiz():
     WordChoice13.set('Answer Here')
     WordDropdown13 = OptionMenu(PTcanvas, WordChoice13, *choices).place(x=100,y=720)
     def change_dropdown13(*args):
-        print( WordChoice13.get() )
         strike(WordChoice13.get())
         if WordChoice10.get()=="Break":
             CheckCorrect[12]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[12]=False
-            print(CheckCorrect)
     WordChoice13.trace('w', change_dropdown13)
 
     WordChoice14 = StringVar(PTWindow)
     WordChoice14.set('Answer Here')
     WordDropdown14 = OptionMenu(PTcanvas, WordChoice14, *choices).place(x=240,y=720)
     def change_dropdown14(*args):
-        print( WordChoice14.get() )
         strike(WordChoice14.get())
         if WordChoice14.get()=="Bind":
             CheckCorrect[13]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[13]=False
-            print(CheckCorrect)
     WordChoice14.trace('w', change_dropdown14)
 
 
