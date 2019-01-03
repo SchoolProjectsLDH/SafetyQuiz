@@ -17,8 +17,6 @@ class HomeClass:
         window.title("Safety Quiz")
         window.geometry("1000x800")
         window.resizable(False, False)
-
-
         GSButton = PhotoImage(file = "Images/GSButton.gif")
         PTButton = PhotoImage(file = "Images/PTButton.gif")
         HTButton = PhotoImage(file = "Images/HTButton.gif")
@@ -30,12 +28,21 @@ class HomeClass:
         window.mainloop()
 
     def GenSafetyFunc(self):
+        canvas1 = Canvas(window, width = 200, height = 50)
+        canvas1.place(x=260,y=600,anchor=CENTER)
+        canvas1.create_rectangle(0, 0, 200, 50, fill = "#38761d")
         window.iconify()
         GenSafety.GSQuiz()
     def PowToolSafetyFunc(self):
+        canvas2 = Canvas(window, width = 244, height = 50)
+        canvas2.place(x=500,y=600,anchor=CENTER)
+        canvas2.create_rectangle(0, 0, 244, 50, fill = "#38761d")
         window.iconify()
         PowerToolQuiz.PTQuiz()
     def HanToolSafetyFunc(self):
+        canvas3 = Canvas(window, width = 224, height = 50)
+        canvas3.place(x=750,y=600,anchor=CENTER)
+        canvas3.create_rectangle(0, 0, 224, 50, fill = "#38761d")
         window.iconify()
         HandToolQuiz.HTQuiz()
     def QuitQuiz(self):

@@ -6,7 +6,7 @@ elif version_info.major == 3:
     from tkinter import *
 
 def GSQuiz():
-    choices = ["True", "Yes", "Permission", "Certificate", "Push Stick", "Clean", "XXX", "No", "False", "Unplug"]
+    choices = ["Yes", "Clean", "Push Stick", "No", "Unplug", "False", "Permission", "XXX", "Certificate", "Never!"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     print("GenSafety quiz")
     GSWindow = Tk()
@@ -22,8 +22,12 @@ def GSQuiz():
     title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#38761d",fg="white")
     title.place(x=350,y=10)
 
+<<<<<<< HEAD
     #alternate wordbank
         #the box
+=======
+    #wordbank
+>>>>>>> fd8c82e61705933a6fcc07cb16c9f7edf5caecce
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -70,7 +74,7 @@ def GSQuiz():
     def change_dropdown1(*args):
         print( WordChoice1.get() )
         strike(WordChoice1.get())
-        if WordChoice1.get() == "False" or WordChoice1.get() == "No":
+        if WordChoice1.get() == "False" or WordChoice1.get() == "No" or WordChoice1.get() == "Never!":
             CheckCorrect[0] = True
             print(CheckCorrect)
         else:
@@ -195,7 +199,7 @@ def GSQuiz():
     def change_dropdown8(*args):
         print( WordChoice8.get() )
         strike(WordChoice8.get())
-        if WordChoice8.get()=="No"or WordChoice8.get()=="False":
+        if WordChoice8.get()=="No" or WordChoice8.get()=="False" or WordChoice8.get()=="Never!":
             CheckCorrect[7]=True
             print(CheckCorrect)
         else:
@@ -213,7 +217,7 @@ def GSQuiz():
     def change_dropdown9(*args):
         print( WordChoice9.get() )
         strike(WordChoice9.get())
-        if WordChoice9.get()=="No"or WordChoice9.get()=="False":
+        if WordChoice9.get()=="No"or WordChoice9.get()=="False" or WordChoice9.get()=="Never!":
             CheckCorrect[8]=True
             print(CheckCorrect)
         else:

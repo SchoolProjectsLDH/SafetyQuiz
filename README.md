@@ -29,8 +29,3 @@ Plan
 
 **End Screen**
 [![End Screen](https://i.gyazo.com/e81a2d83f570cf6134861f39d4203eac.jpg)](https://gyazo.com/e81a2d83f570cf6134861f39d4203eac)
-
-
-**OTHER**
--
-(Coming soon)
