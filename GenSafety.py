@@ -22,12 +22,8 @@ def GSQuiz():
     title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#38761d",fg="white")
     title.place(x=350,y=10)
 
-<<<<<<< HEAD
     #alternate wordbank
         #the box
-=======
-    #wordbank
->>>>>>> fd8c82e61705933a6fcc07cb16c9f7edf5caecce
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -36,6 +32,25 @@ def GSQuiz():
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
         #printing the words
+
+    cross=[]
+    lPos=[[],[],[],[]] #letter position
+    #xsPos ysPos xePos yePos
+    #s is start e is end
+    for x in range (len(choices)):
+        op=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        bbox=mycanvas.bbox(op)
+        for y in range (4):
+            lPos[y].append(bbox[y])
+        xPos=xPos+185
+        if x==5:
+            xPos=125
+            yPos=175
+    #for x in range(len(choices)):
+    #    cross.append(mycanvas.create_line(lPos[0][x],(lPos[1][x]+lPos[3][x])/2,lPos[2][x],(lPos[1][x]+lPos[3][x])/2,width="3",fill="white"))
+    #    mycanvas.delete(cross[x])
+        #change the strike thing to draw a line when a thing is selected
+    """
     for x in range (0,5):
         op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         choicePos[0].append(xPos)
@@ -52,19 +67,23 @@ def GSQuiz():
 
     for y in range(len(choicePos[0])):
         print(choicePos[0][y],",", choicePos[1][y])
-
+    """
     def strike(selected):
-        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
+        sIndex=choices.index(selected)
+        cross.insert((mycanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width="3",fill="white")),sIndex)
+
+        #op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,10):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
                 #mycanvas.delete(ALL)
-                mycanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
-
-        """    if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
+                mycanvas.delete(cross[iteration])
+                #mycanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
+            """
+            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
                 mycanvas.delete(op1)
-                op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,),fill="white")"""
-        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
-
+                op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,),fill="white")
+            op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
+            """
     #QUESTION 1---
     text_canvas = mycanvas.create_text(25, 325, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q1: Minor injuries do not need to be reported. ->")
