@@ -29,3 +29,7 @@ Plan
 
 **End Screen**
 [![End Screen](https://i.gyazo.com/e81a2d83f570cf6134861f39d4203eac.jpg)](https://gyazo.com/e81a2d83f570cf6134861f39d4203eac)
+
+Problems
+-
+See the *issues* tab for all open and closed problems we have encountered and solved throughout this project in compliance with the SDLC process
