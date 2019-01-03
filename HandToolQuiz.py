@@ -19,7 +19,7 @@ def HTQuiz():
     HTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=10, anchor = CENTER)
+    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=25, anchor = CENTER)
 
     xPos=125
     yPos=100

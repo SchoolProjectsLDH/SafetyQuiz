@@ -18,8 +18,7 @@ def GSQuiz():
     mycanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#38761d",fg="white")
-    title.place(x=350,y=10)
+    title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=25, anchor = CENTER)
 
     #wordbank
     xPos=125
