@@ -1,9 +1,10 @@
+import PowResult
 from sys import version_info
 if version_info.major == 2:
     from Tkinter import *
 elif version_info.major == 3:
     from tkinter import *
-import PowResult
+
 def PTQuiz():
     choices = ["Jewelery","Long","Kickbacks","Angular","Front","Side","Speed","Grab","Pull","Machine","Waste","Lock Out","Break","Bind"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False,False,False,False,False]

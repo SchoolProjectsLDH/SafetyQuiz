@@ -113,3 +113,6 @@ problem 12: removing line is deteling other stuff, it says that list is out of i
 
 problem 13: false was not showing in word blank
 - reason: the if statement to change lines had it so after the 5th word (which would be 6th word in reality) would change to the next line, therefore putting false outside the window and making it invisible
+
+problem 14: unable to import powResults
+reason had to had .py at end 
