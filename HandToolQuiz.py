@@ -4,6 +4,7 @@ if version_info.major == 2:
 elif version_info.major == 3:
     from tkinter import *
 import HandToolResult
+
 def HTQuiz():
     print("Hand Tool quiz")
     choices = ["Sharp", "Grab", "False", "Offset Screwdriver", "Face", "Robertson", "True", "Yes", "Drawer", "Glancing"]
@@ -45,12 +46,7 @@ def HTQuiz():
         op1=HTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,10):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                #mycanvas.delete(ALL)
                 HTcanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
-
-        """    if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                mycanvas.delete(op1)
-                op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,),fill="white")"""
         op1=HTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
 
 
@@ -61,7 +57,6 @@ def HTQuiz():
     WordChoice1.set('Answer Here          ')
     WordDropdown1 = OptionMenu(HTcanvas, WordChoice1, *choices).place(x=510,y=320)
     def change_dropdown1(*args):
-        print( WordChoice1.get() )
         strike(WordChoice1.get())
         if WordChoice1.get() == "False" or WordChoice1.get() == "No":
             CheckCorrect[0] = True
@@ -79,7 +74,6 @@ def HTQuiz():
     WordChoice2.set('Answer Here          ')
     WordDropdown2 = OptionMenu(HTcanvas, WordChoice2, *choices).place(x=450,y=360)
     def change_dropdown2(*args):
-        print( WordChoice2.get() )
         strike(WordChoice2.get())
         if WordChoice2.get()=="Yes" or WordChoice2.get()=="True":
             CheckCorrect[1]=True
@@ -96,7 +90,6 @@ def HTQuiz():
     WordChoice3.set('Answer Here          ')
     WordDropdown3 = OptionMenu(HTcanvas, WordChoice3, *choices).place(x=230,y=400)
     def change_dropdown3(*args):
-        print( WordChoice3.get() )
         strike(WordChoice3.get())
         if WordChoice3.get()=="Drawer":
             CheckCorrect[2]=True
@@ -113,7 +106,6 @@ def HTQuiz():
     WordChoice4.set('Answer Here          ')
     WordDropdown4 = OptionMenu(HTcanvas, WordChoice4, *choices).place(x=275,y=440)
     def change_dropdown4(*args):
-        print( WordChoice4.get() )
         strike(WordChoice4.get())
         if WordChoice4.get()=="Face":
             CheckCorrect[3]=True
@@ -130,7 +122,6 @@ def HTQuiz():
     WordChoice5.set('Answer Here          ')
     WordDropdown5 = OptionMenu(HTcanvas, WordChoice5, *choices).place(x=265,y=480)
     def change_dropdown5(*args):
-        print( WordChoice5.get() )
         strike(WordChoice5.get())
         if WordChoice5.get()=="Glancing":
             CheckCorrect[4]=True
@@ -147,7 +138,6 @@ def HTQuiz():
     WordChoice6.set('Answer Here          ')
     WordDropdown6 = OptionMenu(HTcanvas, WordChoice6, *choices).place(x=320,y=520)
     def change_dropdown6(*args):
-        print( WordChoice6.get() )
         strike(WordChoice6.get())
         if WordChoice6.get()=="Robertson":
             CheckCorrect[5]=True
@@ -164,7 +154,6 @@ def HTQuiz():
     WordChoice7.set('Answer Here          ')
     WordDropdown7 = OptionMenu(HTcanvas, WordChoice7, *choices).place(x=177,y=560)
     def change_dropdown7(*args):
-        print( WordChoice7.get() )
         strike(WordChoice7.get())
         if WordChoice7.get()=="Offset Screwdriver":
             CheckCorrect[6]=True
@@ -181,7 +170,6 @@ def HTQuiz():
     WordChoice8.set('Answer Here          ')
     WordDropdown8 = OptionMenu(HTcanvas, WordChoice8, *choices).place(x=175,y=600)
     def change_dropdown8(*args):
-        print( WordChoice8.get() )
         strike(WordChoice8.get())
         if WordChoice8.get()=="Sharp":
             CheckCorrect[7]=True
@@ -198,7 +186,6 @@ def HTQuiz():
     WordChoice9.set('Answer Here          ')
     WordDropdown9 = OptionMenu(HTcanvas, WordChoice9, *choices).place(x=100,y=640)
     def change_dropdown9(*args):
-        print( WordChoice9.get() )
         strike(WordChoice9.get())
         if WordChoice9.get()=="Grab":
             CheckCorrect[8]=True
@@ -215,7 +202,6 @@ def HTQuiz():
     WordChoice10.set('Answer Here          ')
     WordDropdown10 = OptionMenu(HTcanvas, WordChoice10, *choices).place(x=427,y=680)
     def change_dropdown10(*args):
-        print( WordChoice10.get() )
         strike(WordChoice10.get())
         if WordChoice10.get()=="Yes" or WordChoice10.get()=="True":
             CheckCorrect[9]=True
@@ -229,6 +215,5 @@ def HTQuiz():
     def GetHTResult():
         HTWindow.destroy()
         HandToolResult.ReturnHTMark(CheckCorrect)
-    #SubButton = PhotoImage(file = "Images/Submit.gif") --Not working
     Button(HTcanvas, text="Submit Answers", command=GetHTResult).place(x=850,y=700)
     HTWindow.mainloop()
