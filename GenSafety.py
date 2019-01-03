@@ -43,10 +43,6 @@ def GSQuiz():
         choicePos[1].append(yPos)
         xPos=xPos+185
 
-
-    for y in range(len(choicePos[0])):
-        print(choicePos[0][y],",", choicePos[1][y])
-
     def strike(selected):
         op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,10):

@@ -3,7 +3,6 @@ if version_info.major == 2:
     from Tkinter import *
 elif version_info.major == 3:
     from tkinter import *
-
 def ReturnMark(ans):
     correct = 0.0
     saves=open("saves","a")
@@ -23,6 +22,7 @@ def ReturnMark(ans):
     text = str(mark) + "%"
     Label(canvas,text="You got {} out of 10 correct".format(int(correct)),font=("Helvetica",20),bg="#38761d",fg="white").place(x=500,y=200, anchor=CENTER)
     Label(canvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
+    Label(canvas,text="Open the home window which is minimized below to choose another category. Keep this window open for later reference.",font=("Helvetica",15),bg="#38761d",fg="white").place(x=500,y=700,anchor=CENTER)
     print(ans)
     saves.write(str(text) + "\n---")
     saves.close()
