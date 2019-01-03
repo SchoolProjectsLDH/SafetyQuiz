@@ -85,3 +85,31 @@ problem 8: unable to append to saves
   - thought that the code will not get there since it is looping the canvas with canvas.mainloop()
   - since I know order matters maybe it has to be before the aforementioned command to work.
   - so tried putting it before it and it worked
+
+problem 9:
+problem not able to delete line on words: reason using wrong canvas
+
+
+problem 10: unable to get text to show on gsWindow
+- miss spelt choices so it was an error
+- then got first row to worked
+- then had to change the xs in lPos[].append(bbox[]) to ys
+- changed t1 to choices in the cross for loop
+- changed canvas to mycanvas in cross for loop
+all these were causing problems that stopped the program from working
+
+problem 11: putting cross on words
+- orgigionally have another thing to create a list called cross that holds all the command to create a list, but problem is how to called (see test for code)
+- decided to put the cross in the strike function
+first time tried it didn't work, only on the last one because I forgot to replace the x with selected for the variable so it would always do the value of x
+
+
+problem 12: removing line is deteling other stuff, it says that list is out of index range
+- trial and error
+  - add check parameters to check to see if the cross is equal to command for a line at that certain iteration
+  - unable to do that since it is not a string or something (invalid syntax)
+  - filled cross with "" blanks then when time comes to draw line it will go to that certain spot in cross and set it to the command to create the line
+  - then add command to see if cross at that certain spot is not equal to a blank, if it isn't it will remove the line
+
+problem 13: false was not showing in word blank
+- reason: the if statement to change lines had it so after the 5th word (which would be 6th word in reality) would change to the next line, therefore putting false outside the window and making it invisible
