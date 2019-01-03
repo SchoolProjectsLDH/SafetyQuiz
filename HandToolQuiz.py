@@ -60,10 +60,8 @@ def HTQuiz():
         strike(WordChoice1.get())
         if WordChoice1.get() == "False" or WordChoice1.get() == "No":
             CheckCorrect[0] = True
-            print(CheckCorrect)
         else:
             CheckCorrect[0] = False
-            print(CheckCorrect)
 
     WordChoice1.trace('w', change_dropdown1)
 
@@ -77,10 +75,8 @@ def HTQuiz():
         strike(WordChoice2.get())
         if WordChoice2.get()=="Yes" or WordChoice2.get()=="True":
             CheckCorrect[1]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[1]==False
-            print(CheckCorrect)
     WordChoice2.trace('w', change_dropdown2)
 
     #QUESTION 3---
@@ -93,10 +89,8 @@ def HTQuiz():
         strike(WordChoice3.get())
         if WordChoice3.get()=="Drawer":
             CheckCorrect[2]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[2]=False
-            print(CheckCorrect)
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
@@ -109,10 +103,8 @@ def HTQuiz():
         strike(WordChoice4.get())
         if WordChoice4.get()=="Face":
             CheckCorrect[3]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[3]=False
-            print(CheckCorrect)
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
@@ -125,10 +117,8 @@ def HTQuiz():
         strike(WordChoice5.get())
         if WordChoice5.get()=="Glancing":
             CheckCorrect[4]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[4]=False
-            print(CheckCorrect)
     WordChoice5.trace('w', change_dropdown5)
 
     #QUESTION 6---
@@ -141,10 +131,8 @@ def HTQuiz():
         strike(WordChoice6.get())
         if WordChoice6.get()=="Robertson":
             CheckCorrect[5]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[5]=False
-            print(CheckCorrect)
     WordChoice6.trace('w', change_dropdown6)
 
     #QUESTION 7---
@@ -157,10 +145,8 @@ def HTQuiz():
         strike(WordChoice7.get())
         if WordChoice7.get()=="Offset Screwdriver":
             CheckCorrect[6]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[6]=False
-            print(CheckCorrect)
     WordChoice7.trace('w', change_dropdown7)
 
     #QUESTION 8---
@@ -173,10 +159,8 @@ def HTQuiz():
         strike(WordChoice8.get())
         if WordChoice8.get()=="Sharp":
             CheckCorrect[7]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[7]=False
-            print(CheckCorrect)
     WordChoice8.trace('w', change_dropdown8)
 
     #QUESTION 9---
@@ -189,10 +173,8 @@ def HTQuiz():
         strike(WordChoice9.get())
         if WordChoice9.get()=="Grab":
             CheckCorrect[8]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[8]=False
-            print(CheckCorrect)
     WordChoice9.trace('w', change_dropdown9)
 
     #QUESTION 10---
@@ -205,10 +187,8 @@ def HTQuiz():
         strike(WordChoice10.get())
         if WordChoice10.get()=="Yes" or WordChoice10.get()=="True":
             CheckCorrect[9]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[9]=False
-            print(CheckCorrect)
     WordChoice10.trace('w', change_dropdown10)
 
     #SUBMITBUTTON---

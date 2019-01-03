@@ -59,10 +59,8 @@ def GSQuiz():
         strike(WordChoice1.get())
         if WordChoice1.get() == "False" or WordChoice1.get() == "No" or WordChoice1.get() == "Never!":
             CheckCorrect[0] = True
-            print(CheckCorrect)
         else:
             CheckCorrect[0] = False
-            print(CheckCorrect)
     WordChoice1.trace('w', change_dropdown1)
 
     #QUESTION 2---
@@ -75,10 +73,8 @@ def GSQuiz():
         strike(WordChoice2.get())
         if WordChoice2.get()=="Yes" or WordChoice2.get()=="True":
             CheckCorrect[1]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[1]==False
-            print(CheckCorrect)
     WordChoice2.trace('w', change_dropdown2)
 
     #QUESTION 3---
@@ -91,10 +87,8 @@ def GSQuiz():
         strike(WordChoice3.get())
         if WordChoice3.get()=="Permission":
             CheckCorrect[2]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[2]=False
-            print(CheckCorrect)
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
@@ -107,10 +101,8 @@ def GSQuiz():
         strike(WordChoice4.get())
         if WordChoice4.get()=="Certificate":
             CheckCorrect[3]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[3]=False
-            print(CheckCorrect)
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
@@ -123,10 +115,8 @@ def GSQuiz():
         strike(WordChoice5.get())
         if WordChoice5.get()=="Push Stick":
             CheckCorrect[4]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[4]=False
-            print(CheckCorrect)
     WordChoice5.trace('w', change_dropdown5)
 
 
@@ -140,10 +130,8 @@ def GSQuiz():
         strike(WordChoice6.get())
         if WordChoice6.get()=="Clean":
             CheckCorrect[5]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[5]=False
-            print(CheckCorrect)
     WordChoice6.trace('w', change_dropdown6)
 
 
@@ -157,10 +145,8 @@ def GSQuiz():
         strike(WordChoice7.get())
         if WordChoice7.get()=="XXX":
             CheckCorrect[6]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[6]=False
-            print(CheckCorrect)
     WordChoice7.trace('w', change_dropdown7)
 
 
@@ -174,10 +160,8 @@ def GSQuiz():
         strike(WordChoice8.get())
         if WordChoice8.get()=="No" or WordChoice8.get()=="False" or WordChoice8.get()=="Never!":
             CheckCorrect[7]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[7]=False
-            print(CheckCorrect)
     WordChoice8.trace('w', change_dropdown8)
 
 
@@ -191,10 +175,8 @@ def GSQuiz():
         strike(WordChoice9.get())
         if WordChoice9.get()=="No"or WordChoice9.get()=="False" or WordChoice9.get()=="Never!":
             CheckCorrect[8]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[8]=False
-            print(CheckCorrect)
     WordChoice9.trace('w', change_dropdown9)
 
 
@@ -208,10 +190,8 @@ def GSQuiz():
         strike(WordChoice10.get())
         if WordChoice10.get()=="Unplug":
             CheckCorrect[9]=True
-            print(CheckCorrect)
         else:
             CheckCorrect[9]=False
-            print(CheckCorrect)
     WordChoice10.trace('w', change_dropdown10)
 
     #SUBMITBUTTON---
