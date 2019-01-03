@@ -48,42 +48,15 @@ def GSQuiz():
             yPos=175
     for x in range(len(choices)):
         cross.append("")
-            #    mycanvas.delete(cross[x])
-        #change the strike thing to draw a line when a thing is selected
-    """
-    for x in range (0,5):
-        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        choicePos[0].append(xPos)
-        choicePos[1].append(yPos)
-        xPos=xPos+185
-    xPos = 125
-    yPos = 175
-    for x in range (5,10):
-        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        choicePos[0].append(xPos)
-        choicePos[1].append(yPos)
-        xPos=xPos+185
 
-
-    for y in range(len(choicePos[0])):
-        print(choicePos[0][y],",", choicePos[1][y])
-    """
     def strike(selected):
         sIndex=choices.index(selected)
         cross[sIndex]=mycanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width='3',fill='white')
 
-        #op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,10):
             if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and cross[iteration]!="":
-                #mycanvas.delete(ALL)
                 mycanvas.delete(cross[iteration])
-                #mycanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
-            """
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
-                mycanvas.delete(op1)
-                op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,),fill="white")
-            op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
-            """
+
     #QUESTION 1---
     text_canvas = mycanvas.create_text(25, 325, anchor = "nw", font=('Helvetica', 15), fill="white")
     mycanvas.itemconfig(text_canvas, text="Q1: Minor injuries do not need to be reported. ->")
