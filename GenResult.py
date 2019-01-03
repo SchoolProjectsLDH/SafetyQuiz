@@ -24,6 +24,6 @@ def ReturnMark(ans):
     Label(canvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="#38761d").place(x=400,y=350)
     Label(canvas,text="Open the home window which is minimized below to choose another category. Keep this window open for later reference.",font=("Helvetica",15),bg="#38761d",fg="white").place(x=500,y=700,anchor=CENTER)
     print(ans)
-    saves.write(str(text) + "\n---")
+    saves.write("General Safety Quiz: {}".format(str(text)) + "\n")
     saves.close()
     ResWindow.mainloop()
