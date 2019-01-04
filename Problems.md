@@ -126,3 +126,17 @@ problem 16 not getting drop box in right position when did procedure
 
 problem 17 if 2 words are the same for the last word before the drop box it will choice the last one used so the drop box may bot be in the right spot
 - solution: make it so it only does it once
+problem 18: multiple the is messing up the program because it doesnt know which one to do
+- solution :
+  if bDB = text
+  if str(word == str bDB
+    textCount +=1
+    if textCount == 2
+    dbPos[#].append=qbox[#]
+    found my solution
+problem 18: drop box 9 and 11 did not show up
+- trial and error
+- tried putting 9 as 8, it worked and moved onto the next one
+- reason is that only one of them has multiple of the same words
+- so it still adding to tCount of the other option making it not equal when it goes to assign dbPos
+solution add and skip!=0 in the place where they add to tCount
