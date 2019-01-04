@@ -116,7 +116,7 @@ def GSQuiz():
 
 
     #QUESTION 3---
-    boxPositioning(25,405,"Q3: Always get                      from the instructor before using the drill press.","get")
+    boxPositioning(25,405,"Q3: Always get                           from the instructor before using the drill press.","get")
     WordChoice3 = StringVar(GSWindow)
     WordChoice3.set('Answer Here')
     WordDropdown3 = OptionMenu(mycanvas, WordChoice3, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -132,7 +132,7 @@ def GSQuiz():
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
-    boxPositioning(25,445,"Q4: Students are not allowed to use equipment without having a safety                                       for that equipment","safety")
+    boxPositioning(25,445,"Q4: Students are not allowed to use equipment without having a safety                          for that equipment","safety")
     WordChoice4 = StringVar(GSWindow)
     WordChoice4.set('Answer Here')
     WordDropdown4 = OptionMenu(mycanvas, WordChoice4, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -148,7 +148,7 @@ def GSQuiz():
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
-    boxPositioning(25,485,"Q5: Use a                                       when cutting small pieces on a bandsaw.","a")
+    boxPositioning(25,485,"Q5: Use a                          when cutting small pieces on a bandsaw.","a")
     WordChoice5 = StringVar(GSWindow)
     WordChoice5.set('Answer Here')
     WordDropdown5 = OptionMenu(mycanvas, WordChoice5, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -165,7 +165,7 @@ def GSQuiz():
 
 
     #QUESTION 6---
-    boxPositioning(25,525,"Q6: After use,                                        and return the tool to its proper place","use,")
+    boxPositioning(25,525,"Q6: After use,                          and return the tool to its proper place","use,")
     WordChoice6 = StringVar(GSWindow)
     WordChoice6.set('Answer Here')
     WordDropdown6 = OptionMenu(mycanvas, WordChoice6, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -233,7 +233,7 @@ def GSQuiz():
 
 
     #QUESTION 10---
-    boxPositioning(25,685,"Q10:                                       the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
+    boxPositioning(25,685,"Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
     WordChoice10 = StringVar(GSWindow)
     WordChoice10.set('Answer Here')
     WordDropdown10 = OptionMenu(mycanvas, WordChoice10, *choices).place(x=dbPos[0],y=dbPos[1])
