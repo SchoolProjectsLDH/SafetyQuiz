@@ -23,7 +23,6 @@ def GSQuiz():
     title.place(x=350,y=10)
 
     #alternate wordbank
-        #the box
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -31,31 +30,27 @@ def GSQuiz():
     side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
-        #printing the words
-
-    cross=[]
-    lPos=[[],[],[],[]] #letter position
-    #xsPos ysPos xePos yePos
-    #s is start e is end
-    for x in range (len(choices)):
-        op=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        bbox=mycanvas.bbox(op)
-        for y in range (4):
-            lPos[y].append(bbox[y])
+    for x in range (0,5):
+        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        choicePos[0].append(xPos)
+        choicePos[1].append(yPos)
         xPos=xPos+185
-        if x==4:
-            xPos=125
-            yPos=175
-    for x in range(len(choices)):
-        cross.append("")
+    xPos = 125
+    yPos = 175
+    for x in range (5,10):
+        op1=mycanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        choicePos[0].append(xPos)
+        choicePos[1].append(yPos)
+        xPos=xPos+185
+
 
     def strike(selected):
-        sIndex=choices.index(selected)
-        cross[sIndex]=mycanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width='3',fill='white')
-
+        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,10):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and cross[iteration]!="":
-                mycanvas.delete(cross[iteration])
+            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration]:
+                mycanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
+        op1=mycanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
+
     dbPos=[[],[]]
     def boxPositioning(x,y,text,bDB):
         space=5
@@ -116,7 +111,7 @@ def GSQuiz():
 
 
     #QUESTION 3---
-    boxPositioning(25,405,"Q3: Always get                      from the instructor before using the drill press.","get")
+    boxPositioning(25,405,"Q3: Always get                           from the instructor before using the drill press.","get")
     WordChoice3 = StringVar(GSWindow)
     WordChoice3.set('Answer Here')
     WordDropdown3 = OptionMenu(mycanvas, WordChoice3, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -132,7 +127,7 @@ def GSQuiz():
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
-    boxPositioning(25,445,"Q4: Students are not allowed to use equipment without having a safety                                       for that equipment","safety")
+    boxPositioning(25,445,"Q4: Students are not allowed to use equipment without having a safety                          for that equipment","safety")
     WordChoice4 = StringVar(GSWindow)
     WordChoice4.set('Answer Here')
     WordDropdown4 = OptionMenu(mycanvas, WordChoice4, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -148,7 +143,7 @@ def GSQuiz():
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
-    boxPositioning(25,485,"Q5: Use a                                       when cutting small pieces on a bandsaw.","a")
+    boxPositioning(25,485,"Q5: Use a                          when cutting small pieces on a bandsaw.","a")
     WordChoice5 = StringVar(GSWindow)
     WordChoice5.set('Answer Here')
     WordDropdown5 = OptionMenu(mycanvas, WordChoice5, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -165,7 +160,7 @@ def GSQuiz():
 
 
     #QUESTION 6---
-    boxPositioning(25,525,"Q6: After use,                                        and return the tool to its proper place","use,")
+    boxPositioning(25,525,"Q6: After use,                          and return the tool to its proper place","use,")
     WordChoice6 = StringVar(GSWindow)
     WordChoice6.set('Answer Here')
     WordDropdown6 = OptionMenu(mycanvas, WordChoice6, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -233,7 +228,7 @@ def GSQuiz():
 
 
     #QUESTION 10---
-    boxPositioning(25,685,"Q10:                                       the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
+    boxPositioning(25,685,"Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
     WordChoice10 = StringVar(GSWindow)
     WordChoice10.set('Answer Here')
     WordDropdown10 = OptionMenu(mycanvas, WordChoice10, *choices).place(x=dbPos[0],y=dbPos[1])
