@@ -216,7 +216,7 @@ def PTQuiz():
     WordDropdown12 = OptionMenu(PTcanvas, WordChoice12, *choices).place(x=135,y=640)
     def change_dropdown12(*args):
         strike(WordChoice12.get())
-        if WordChoice10.get()=="Lock Out":
+        if WordChoice12.get()=="Lock Out":
             CheckCorrect[11]=True
         else:
             CheckCorrect[11]=False
@@ -231,7 +231,7 @@ def PTQuiz():
     WordDropdown13 = OptionMenu(PTcanvas, WordChoice13, *choices).place(x=100,y=720)
     def change_dropdown13(*args):
         strike(WordChoice13.get())
-        if WordChoice10.get()=="Break":
+        if WordChoice13.get()=="Break":
             CheckCorrect[12]=True
         else:
             CheckCorrect[12]=False
