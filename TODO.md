@@ -1,7 +1,7 @@
 To-do list in order of completion
 -
 
-1. XY coordinate problem
+1. XY coordinate problem (SOLVED)
 2. Efficiency
 3. Strike out problem
 4. Commenting
