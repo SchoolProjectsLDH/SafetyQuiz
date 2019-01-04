@@ -14,11 +14,11 @@ def PTQuiz():
     PTWindow.geometry("1000x800")
     PTWindow.resizable(False,False)
     PTcanvas = Canvas(PTWindow, width = 1000, height = 800)
-    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "#38761d")
+    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "black")
     PTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=25, anchor= CENTER)
+    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="black",fg="white").place(x=500,y=25, anchor= CENTER)
 
     #WordBank
     xPos=125

@@ -15,11 +15,11 @@ def HTQuiz():
     HTWindow.resizable(False,False)
 
     HTcanvas = Canvas(HTWindow, width = 1000, height = 800)
-    HTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "#38761d")
+    HTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "black")
     HTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=25, anchor = CENTER)
+    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg="black",fg="white").place(x=500,y=25, anchor = CENTER)
 
     xPos=125
     yPos=100
