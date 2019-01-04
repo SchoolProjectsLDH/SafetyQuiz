@@ -112,8 +112,7 @@ def PTQuiz():
 
     #QUESTION 4---
     text_canvas = PTcanvas.create_text(25, 405, anchor = "nw", font=('Helvetica', 15), fill="white")
-    #
-    PTcanvas.itemconfig(text_canvas, text="Q4: Always Operate the drill press from the                       ,never from the                         ")
+    PTcanvas.itemconfig(text_canvas, text="Q4: Always operate the drill press from the                       ,never from the                         ")
     WordChoice5 = StringVar(PTWindow)
     WordChoice5.set('Answer Here')
     WordDropdown5 = OptionMenu(PTcanvas, WordChoice5, *choices).place(x=425,y=400)
@@ -138,7 +137,7 @@ def PTQuiz():
 
     #QUESTION 6---
     text_canvas = PTcanvas.create_text(25, 445, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="Q5: Check for the proper for the proper                      for the drill size and material you are working on")
+    PTcanvas.itemconfig(text_canvas, text="Q5: Check for the proper                       , drill size and material you are working on")
     WordChoice7 = StringVar(PTWindow)
     WordChoice7.set('Answer Here')
     WordDropdown7 = OptionMenu(PTcanvas, WordChoice7, *choices).place(x=380,y=440)
@@ -169,7 +168,7 @@ def PTQuiz():
     #QUESTION 8---
 
     text_canvas = PTcanvas.create_text(25, 525, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="Q7: Never                        or force a japped pice through the equiplment. Shut the                      off and dislodge the")
+    PTcanvas.itemconfig(text_canvas, text="Q7: Never                        or force a jammed piece through the equipment. Shut the                      off and dislodge the")
     text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="piece")
     WordChoice9 = StringVar(PTWindow)
@@ -210,7 +209,7 @@ def PTQuiz():
 
     #QUESTION 10---
     text_canvas = PTcanvas.create_text(25, 645, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="Q9:Use the                       when changing blades")
+    PTcanvas.itemconfig(text_canvas, text="Q9: Use the                       when changing blades")
     WordChoice12 = StringVar(PTWindow)
     WordChoice12.set('Answer Here')
     WordDropdown12 = OptionMenu(PTcanvas, WordChoice12, *choices).place(x=135,y=640)
@@ -223,7 +222,7 @@ def PTQuiz():
     WordChoice12.trace('w', change_dropdown12)
 
     text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")    #SUBMITBUTTON---
-    PTcanvas.itemconfig(text_canvas, text="Q10When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
+    PTcanvas.itemconfig(text_canvas, text="Q10: When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
     text_canvas = PTcanvas.create_text(25, 725, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="blade to                    or                  ")
     WordChoice13 = StringVar(PTWindow)
@@ -247,7 +246,6 @@ def PTQuiz():
         else:
             CheckCorrect[13]=False
     WordChoice14.trace('w', change_dropdown14)
-
 
     def GetResult():
         PTWindow.destroy()
