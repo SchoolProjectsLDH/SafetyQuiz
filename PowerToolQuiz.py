@@ -20,6 +20,7 @@ def PTQuiz():
     #title
     title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="#38761d",fg="white").place(x=500,y=25, anchor= CENTER)
 
+    #WordBank
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -41,12 +42,13 @@ def PTQuiz():
         xPos=xPos+185
     xPos = 125
     yPos = 220
-    for x in range (10,14):
+    for x in range(10,14):
         op1=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         choicePos[0].append(xPos)
         choicePos[1].append(yPos)
         xPos=xPos+185
 
+    #Highlighting selected words function
     def strike(selected):
         op1=PTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
         for iteration in range(0,14):
@@ -54,13 +56,13 @@ def PTQuiz():
                 PTcanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
         op1=PTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15,"overstrike"),fill="red")
 
+
     #QUESTION 1---
     text_canvas = PTcanvas.create_text(25, 285, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="Q1: Remove all                    and tie back                    hair")
     WordChoice1 = StringVar(PTWindow)
     WordChoice1.set('Answer Here')
     WordDropdown1 = OptionMenu(PTcanvas, WordChoice1, *choices).place(x=165,y=280)
-
     def change_dropdown1(*args):
         strike(WordChoice1.get())
         if WordChoice1.get() == "Jewelery":
@@ -135,6 +137,7 @@ def PTQuiz():
             CheckCorrect[5]=False
     WordChoice6.trace('w', change_dropdown6)
 
+
     #QUESTION 6---
     text_canvas = PTcanvas.create_text(25, 445, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="Q5: Check for the proper                       , drill size and material you are working on")
@@ -148,6 +151,7 @@ def PTQuiz():
         else:
             CheckCorrect[6]=False
     WordChoice7.trace('w', change_dropdown7)
+
 
     #QUESTION 7---
     text_canvas = PTcanvas.create_text(25, 485, anchor = "nw", font=('Helvetica', 15), fill="white")
@@ -166,7 +170,6 @@ def PTQuiz():
 
 
     #QUESTION 8---
-
     text_canvas = PTcanvas.create_text(25, 525, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="Q7: Never                        or force a jammed piece through the equipment. Shut the                      off and dislodge the")
     text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
@@ -191,8 +194,9 @@ def PTQuiz():
         else:
             CheckCorrect[9]=False
     WordChoice10.trace('w', change_dropdown10)
-    #QUESTION 9---
 
+
+    #QUESTION 9---
     text_canvas = PTcanvas.create_text(25, 605, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="Q8: When cutting with the band saw, the blade should cut on the                       side of the work piece ")
     WordChoice11 = StringVar(PTWindow)
