@@ -96,7 +96,7 @@ def HTQuiz():
     WordChoice2.trace('w', change_dropdown2)
 
     #QUESTION 3---
-    boxPositioning(25, 405,"Q3: We store C clamps in the                          .","the")
+    boxPositioning(25, 405,"Q3: We store C clamps in the                               .","the")
     WordChoice3 = StringVar(HTWindow)
     WordChoice3.set('Answer Here          ')
     WordDropdown3 = OptionMenu(HTcanvas, WordChoice3, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -109,7 +109,7 @@ def HTQuiz():
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 4---
-    boxPositioning(25, 445,"Q4: For hammers, you should use the                          to hit an object","the")
+    boxPositioning(25, 445,"Q4: For hammers, you should use the                               to hit an object","the")
     WordChoice4 = StringVar(HTWindow)
     WordChoice4.set('Answer Here          ')
     WordDropdown4 = OptionMenu(HTcanvas, WordChoice4, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -122,7 +122,7 @@ def HTQuiz():
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 5---
-    boxPositioning(25, 485,"Q5: For a hammer, You should avoid                          blows when hitting an object.","avoid")
+    boxPositioning(25, 485,"Q5: For a hammer, You should avoid                               blows when hitting an object.","avoid")
     WordChoice5 = StringVar(HTWindow)
     WordChoice5.set('Answer Here          ')
     WordDropdown5 = OptionMenu(HTcanvas, WordChoice5, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -148,7 +148,7 @@ def HTQuiz():
     WordChoice6.trace('w', change_dropdown6)
 
     #QUESTION 7---
-    boxPositioning(25, 565,"Q7: You should use an                          in tight areas","an")
+    boxPositioning(25, 565,"Q7: You should use an                               in tight areas","an")
     WordChoice7 = StringVar(HTWindow)
     WordChoice7.set('Answer Here          ')
     WordDropdown7 = OptionMenu(HTcanvas, WordChoice7, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -161,7 +161,7 @@ def HTQuiz():
     WordChoice7.trace('w', change_dropdown7)
 
     #QUESTION 8---
-    boxPositioning(25, 605,"Q8: You should use a                          blade when cutting","a")
+    boxPositioning(25, 605,"Q8: You should use a                               blade when cutting","a")
     WordChoice8 = StringVar(HTWindow)
     WordChoice8.set('Answer Here          ')
     WordDropdown8 = OptionMenu(HTcanvas, WordChoice8, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -174,7 +174,7 @@ def HTQuiz():
     WordChoice8.trace('w', change_dropdown8)
 
     #QUESTION 9---
-    boxPositioning(25, 645,"Q9: Do not                          a falling knife","not")
+    boxPositioning(25, 645,"Q9: Do not                               a falling knife","not")
     WordChoice9 = StringVar(HTWindow)
     WordChoice9.set('Answer Here          ')
     WordDropdown9 = OptionMenu(HTcanvas, WordChoice9, *choices).place(x=dbPos[0],y=dbPos[1])

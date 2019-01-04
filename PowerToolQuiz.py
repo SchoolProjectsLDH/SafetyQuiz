@@ -93,7 +93,7 @@ def PTQuiz():
 
 
     #QUESTION 1---
-    boxPositioning(25,285,"Q1: Remove all                    and tie back                    hair","all","back",0,0)
+    boxPositioning(25,285,"Q1: Remove all                           and tie back                           hair","all","back",0,0)
     WordChoice1 = StringVar(PTWindow)
     WordChoice1.set('Answer Here')
     WordDropdown1 = OptionMenu(PTcanvas, WordChoice1, *choices).place(x=dbPos[0][0],y=dbPos[1][0])
@@ -119,7 +119,7 @@ def PTQuiz():
 
 
     #QUESTION 2---
-    boxPositioning(25,325,"Q2: Watch for                       when cutting small pieces","for","none",0,0)
+    boxPositioning(25,325,"Q2: Watch for                           when cutting small pieces","for","none",0,0)
     WordChoice3 = StringVar(PTWindow)
     WordChoice3.set('Answer Here')
     WordDropdown3 = OptionMenu(PTcanvas, WordChoice3, *choices).place(x=dbPos[0][2],y=dbPos[1][2])
@@ -132,7 +132,7 @@ def PTQuiz():
     WordChoice3.trace('w', change_dropdown3)
 
     #QUESTION 3---
-    boxPositioning(25,365,"Q3: When making                        cuts ensure the blade has adequate clearance","making","none",0,0)
+    boxPositioning(25,365,"Q3: When making                           cuts ensure the blade has adequate clearance","making","none",0,0)
     WordChoice4 = StringVar(PTWindow)
     WordChoice4.set('Answer Here')
     WordDropdown4 = OptionMenu(PTcanvas, WordChoice4, *choices).place(x=dbPos[0][3],y=dbPos[1][3])
@@ -145,9 +145,8 @@ def PTQuiz():
     WordChoice4.trace('w', change_dropdown4)
 
     #QUESTION 4---
-    boxPositioning(25,405,"Q4: Always operate the drill press from the                       ,never from the                         ","the","the",2,3)
+    boxPositioning(25,405,"Q4: Always operate the drill press from the                           ,never from the                           ","the","the",2,3)
     text_canvas = PTcanvas.create_text(25, 405, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="Q4: Always operate the drill press from the                       ,never from the                         ")
     WordChoice5 = StringVar(PTWindow)
     WordChoice5.set('Answer Here')
     WordDropdown5 = OptionMenu(PTcanvas, WordChoice5, *choices).place(x=dbPos[0][4],y=dbPos[1][4])
@@ -172,7 +171,7 @@ def PTQuiz():
 
 
     #QUESTION 6---
-    boxPositioning(25,445,"Q5: Check for the proper                       , drill size and material you are working on","proper","none",0,0)
+    boxPositioning(25,445,"Q5: Check for the proper                           , drill size and material you are working on","proper","none",0,0)
     WordChoice7 = StringVar(PTWindow)
     WordChoice7.set('Answer Here')
     WordDropdown7 = OptionMenu(PTcanvas, WordChoice7, *choices).place(x=dbPos[0][6],y=dbPos[1][6])
@@ -186,7 +185,7 @@ def PTQuiz():
 
 
     #QUESTION 7---
-    boxPositioning(25,485,"Q6: Never attempt to                     a piece if it slips from the clamp","to","none",0,0)
+    boxPositioning(25,485,"Q6: Never attempt to                           a piece if it slips from the clamp","to","none",0,0)
 
     WordChoice8 = StringVar(PTWindow)
     WordChoice8.set('Answer Here')
@@ -201,7 +200,7 @@ def PTQuiz():
 
 
     #QUESTION 8---
-    boxPositioning(25,525,"Q7: Never                        or force a jammed piece through the equipment. Shut the                      off and dislodge the","Never", "the",0,2)
+    boxPositioning(25,525,"Q7: Never                           or force a jammed piece through the equipment. Shut the                           off and dislodge the","Never", "the",0,2)
     text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="piece")
     WordChoice9 = StringVar(PTWindow)
@@ -227,7 +226,7 @@ def PTQuiz():
 
 
     #QUESTION 9---
-    boxPositioning(25,605,"Q8: When cutting with the band saw, the blade should cut on the                       side of the work piece ","the","none",3,0)
+    boxPositioning(25,605,"Q8: When cutting with the band saw, the blade should cut on the                           side of the work piece ","the","none",3,0)
     WordChoice11 = StringVar(PTWindow)
     WordChoice11.set('Answer Here')
     WordDropdown11 = OptionMenu(PTcanvas, WordChoice11, *choices).place(x=dbPos[0][10],y=dbPos[1][10])
@@ -241,7 +240,7 @@ def PTQuiz():
 
 
     #QUESTION 10---
-    boxPositioning(25,645,"Q9: Use the                       when changing blades","the","none",0,0)
+    boxPositioning(25,645,"Q9: Use the                           when changing blades","the","none",0,0)
     WordChoice12 = StringVar(PTWindow)
     WordChoice12.set('Answer Here')
     WordDropdown12 = OptionMenu(PTcanvas, WordChoice12, *choices).place(x=dbPos[0][11],y=dbPos[1][11])
@@ -253,7 +252,7 @@ def PTQuiz():
             CheckCorrect[11]=False
     WordChoice12.trace('w', change_dropdown12)
 
-    boxPositioning(25,725,"blade to                    or                  ","to","or",0,0)
+    boxPositioning(25,725,"blade to                           or                           ","to","or",0,0)
     text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")    #SUBMITBUTTON---
     PTcanvas.itemconfig(text_canvas, text="Q10: When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
     WordChoice13 = StringVar(PTWindow)
