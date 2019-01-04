@@ -257,7 +257,7 @@ def PTQuiz():
     def change_dropdown12(*args):
         print( WordChoice12.get() )
         strike(WordChoice12.get())
-        if WordChoice10.get()=="Lock Out":
+        if WordChoice12.get()=="Lock Out":
             CheckCorrect[11]=True
             print(CheckCorrect)
         else:
@@ -275,7 +275,7 @@ def PTQuiz():
     def change_dropdown13(*args):
         print( WordChoice13.get() )
         strike(WordChoice13.get())
-        if WordChoice10.get()=="Break":
+        if WordChoice13.get()=="Break":
             CheckCorrect[12]=True
             print(CheckCorrect)
         else:
