@@ -260,7 +260,7 @@ def PTQuiz():
     WordDropdown13 = OptionMenu(PTcanvas, WordChoice13, *choices).place(x=dbPos[0][12],y=dbPos[1][12])
     def change_dropdown13(*args):
         strike(WordChoice13.get())
-        if WordChoice13.get()=="Break":
+        if WordChoice13.get()=="Break" or WordChoice13.get()=="Bind":
             CheckCorrect[12]=True
         else:
             CheckCorrect[12]=False
@@ -271,7 +271,7 @@ def PTQuiz():
     WordDropdown14 = OptionMenu(PTcanvas, WordChoice14, *choices).place(x=dbPos[0][13],y=dbPos[1][13])
     def change_dropdown14(*args):
         strike(WordChoice14.get())
-        if WordChoice14.get()=="Bind":
+        if WordChoice14.get()=="Bind" or WordChoice13.get()=="Break":
             CheckCorrect[13]=True
         else:
             CheckCorrect[13]=False
