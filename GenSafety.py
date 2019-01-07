@@ -6,7 +6,7 @@ elif version_info.major == 3:
     from tkinter import *
 
 def GSQuiz():
-    choices = ["Yes", "Clean", "Push Stick", "No", "Unplug", "False", "Permission", "XXX", "Certificate", "Never!"]
+    choices = ["Yes", "Clean", "Push Stick", "No", "Unplug", "False", "Permission", "Safety Glasses", "Certificate", "Never!"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     GSWindow = Tk()
     GSWindow.title("General Safety Quiz")
@@ -156,13 +156,13 @@ def GSQuiz():
 
 
     #QUESTION 7---
-    boxPositioning(25,565,"Q7: This is a filler text","text")
+    boxPositioning(25,565,"Q7: When using a machine you should always wear","wear")
     WordChoice7 = StringVar(GSWindow)
     WordChoice7.set('Answer Here')
     WordDropdown7 = OptionMenu(mycanvas, WordChoice7, *choices).place(x=dbPos[0],y=dbPos[1])
     def change_dropdown7(*args):
         strike(WordChoice7.get())
-        if WordChoice7.get()=="XXX":
+        if WordChoice7.get()=="Safety Glasses":
             CheckCorrect[6]=True
         else:
             CheckCorrect[6]=False
