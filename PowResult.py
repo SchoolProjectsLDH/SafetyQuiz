@@ -7,7 +7,6 @@ elif version_info.major == 3:
 def ReturnMark(ans):
     correct = 0.0
     saves=open("saves","a")
-    print("Result")
     ResWindow=Tk()
     ResWindow.title("Result")
     ResWindow.geometry("1000x800")

@@ -8,7 +8,6 @@ elif version_info.major == 3:
 def PTQuiz():
     choices = ["Jewelery","Long","Kickbacks","Angular","Front","Side","Speed","Grab","Pull","Machine","Waste","Lock Out","Break","Bind"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-    print("Power tool quiz")
     PTWindow=Tk()
     PTWindow.title("Power Tool Quiz")
     PTWindow.geometry("1000x800")

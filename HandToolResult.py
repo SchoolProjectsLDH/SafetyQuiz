@@ -6,7 +6,6 @@ elif version_info.major == 3:
 def ReturnHTMark(ans):
     correct = 0.0
     saves=open("saves","a")
-    print("Result")
     ResHTWindow=Tk()
     ResHTWindow.title("Result")
     ResHTWindow.geometry("1000x800")

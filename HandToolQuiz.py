@@ -6,7 +6,6 @@ elif version_info.major == 3:
 import HandToolResult
 
 def HTQuiz():
-    print("Hand Tool quiz")
     choices = ["Sharp", "Grab", "False", "Offset Screwdriver", "Face", "Robertson", "True", "Yes", "Drawer", "Glancing"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     HTWindow=Tk()
