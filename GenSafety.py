@@ -8,7 +8,6 @@ elif version_info.major == 3:
 def GSQuiz():
     choices = ["Yes", "Clean", "Push Stick", "No", "Unplug", "False", "Permission", "XXX", "Certificate", "Never!"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
-    print("GenSafety quiz")
     GSWindow = Tk()
     GSWindow.title("General Safety Quiz")
     GSWindow.geometry("1000x800")
