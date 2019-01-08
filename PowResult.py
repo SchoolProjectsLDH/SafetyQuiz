@@ -22,7 +22,6 @@ def ReturnMark(ans):
     text = str(round(mark,2)) + "%"
     Label(PTRcanvas,text="You got {} out of 14 correct".format(int(correct)),font=("Helvetica",20),bg="black",fg="white").place(x=500,y=200, anchor=CENTER)
     Label(PTRcanvas,text=text,font=("Helvetica",60),fg="white",bg="black").place(x=400,y=350)
-    print(ans)
     saves.write("Power Tool Quiz: {}".format(str(text)) + "\n")
     saves.close()
     ResWindow.mainloop()

@@ -22,7 +22,6 @@ def ReturnHTMark(ans):
     Label(HTRcanvas,text="You got {} out of 10 correct".format(int(correct)),font=("Helvetica",20),bg="black",fg="white").place(x=500,y=200, anchor=CENTER)
     Label(HTRcanvas,text="{}{}".format(mark,"%"),font=("Helvetica",60),fg="white",bg="black").place(x=400,y=350)
     Label(HTRcanvas,text="Open the home window which is minimized below to choose another category. Keep this window open for later reference.",font=("Helvetica",15),bg="black",fg="white").place(x=500,y=700,anchor=CENTER)
-    print(ans)
     saves.write("Hand Tool Quiz: {}".format(str(text)) + "\n")
     saves.close()
 

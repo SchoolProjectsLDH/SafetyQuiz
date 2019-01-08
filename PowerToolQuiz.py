@@ -86,9 +86,6 @@ def PTQuiz():
                 dbPos[0].append(qbox[2]+space)
                 dbPos[1].append(qbox[1])
                 used2=True
-        print(dbPos)
-        print(len(dbPos[0]))
-        print(len(dbPos[1]))
 
 
     #QUESTION 1---
