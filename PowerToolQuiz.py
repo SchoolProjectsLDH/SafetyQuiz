@@ -249,11 +249,13 @@ def PTQuiz():
         else:
             CheckCorrect[11]=False
     WordChoice12.trace('w', change_dropdown12)
-    boxPositioning(25,725,"blade to                           or                           ","to","or",0,0)
-    text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")
+
+
 
     #QUESTION 10---
+    text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")
     PTcanvas.itemconfig(text_canvas, text="Q10: When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
+    boxPositioning(25,725,"blade to                           or                           ","to","or",0,0)
     WordChoice13 = StringVar(PTWindow)
     WordChoice13.set('Answer Here')
     WordDropdown13 = OptionMenu(PTcanvas, WordChoice13, *choices).place(x=dbPos[0][12],y=dbPos[1][12])

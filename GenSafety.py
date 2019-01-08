@@ -191,7 +191,9 @@ def GSQuiz():
 
 
     #QUESTION 9---
-    boxPositioning(25,645,"Q9: Once you have received your equipment certification you may use the equipment any time without permission. ->","->")
+    text_canvas = mycanvas.create_text(25, 645, anchor = "nw", font=('Helvetica', 15), fill="white")
+    mycanvas.itemconfig(text_canvas, text="Q9: Once you have received your equipment certification you may use the equipment any time without" )
+    boxPositioning(25,685," permission. ->","->")
     WordChoice9 = StringVar(GSWindow)
     WordChoice9.set('Answer Here')
     WordDropdown9 = OptionMenu(mycanvas, WordChoice9, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -205,7 +207,7 @@ def GSQuiz():
 
 
     #QUESTION 10---
-    boxPositioning(25,685,"Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
+    boxPositioning(25,725,"Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
     WordChoice10 = StringVar(GSWindow)
     WordChoice10.set('Answer Here')
     WordDropdown10 = OptionMenu(mycanvas, WordChoice10, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -221,6 +223,6 @@ def GSQuiz():
     def GetResult():
         GSWindow.destroy()
         GenResult.ReturnMark(CheckCorrect)
-    Button(mycanvas, text="Submit Answers", command=GetResult).place(x=850,y=700)
+    Button(mycanvas, text="Submit Answers", command=GetResult).place(x=850,y=755)
 
     GSWindow.mainloop()
