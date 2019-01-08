@@ -27,33 +27,35 @@ def PTQuiz():
     side2=PTcanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=PTcanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=PTcanvas.create_line(975,75,25,75,width="3",fill="white")
-    for x in range (0,5):
-        op1=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        choicePos[0].append(xPos)
-        choicePos[1].append(yPos)
+    cross=[]
+    lPos=[[],[],[],[]] #letter position
+    #xsPos ysPos xePos yePos
+    #s is start e is end
+    for x in range (len(choices)):
+        op=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        bbox=PTcanvas.bbox(op)
+        for y in range (4):
+            lPos[y].append(bbox[y])
         xPos=xPos+185
-    xPos = 125
-    yPos = 175
-    for x in range (5,10):
-        op1=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        choicePos[0].append(xPos)
-        choicePos[1].append(yPos)
-        xPos=xPos+185
-    xPos = 125
-    yPos = 220
-    for x in range(10,14):
-        op1=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
-        choicePos[0].append(xPos)
-        choicePos[1].append(yPos)
-        xPos=xPos+185
+        if x==4:
+            xPos=125
+            yPos=150
+        if x==9:
+            xPos=125
+            yPos=200
+    for x in range(len(choices)):
+        cross.append("")
 
-    #Highlighting selected words function
     def strike(selected):
-        op1=PTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)])
+        print(cross)
+        sIndex=choices.index(selected)
+        if (cross[sIndex]==""):
+            cross[sIndex]=PTcanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width='3',fill='white')
+
         for iteration in range(0,14):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and WordChoice11.get() != choices[iteration] and WordChoice12.get() != choices[iteration] and WordChoice13.get() != choices[iteration] and WordChoice14.get() != choices[iteration]:
-                PTcanvas.create_text(choicePos[0][choices.index(choices[iteration])],choicePos[1][choices.index(choices[iteration])],text=choices[choices.index(choices[iteration])],font=('Helvetica', 15),fill="white")
-        op1=PTcanvas.create_text(choicePos[0][choices.index(selected)],choicePos[1][choices.index(selected)],text=choices[choices.index(selected)],font=('Helvetica', 15),fill="red")
+            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and WordChoice11.get() != choices[iteration] and WordChoice12.get() != choices[iteration]  and WordChoice13.get() != choices[iteration] and WordChoice14.get() != choices[iteration]and cross[iteration]!="":
+                PTcanvas.delete(cross[iteration])
+                cross[iteration]=""
 
 
 
