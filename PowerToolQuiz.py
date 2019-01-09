@@ -6,7 +6,7 @@ elif version_info.major == 3:
     from tkinter import *
 
 def PTQuiz():
-    choices = ["Side","Angular","Machine","Grab","Long","Waste","Pull","Bind","Lock Out","Front""Break","Kickbacks","Jewelery","Speed"]
+    choices = ["Side","Angular","Machine","Grab","Long","Waste","Pull","Bind","Lock Out","Front","Break","Kickbacks","Jewelery","Speed"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False,False,False,False,False]
     PTWindow=Tk()
     PTWindow.title("Power Tool Quiz")
