@@ -6,7 +6,10 @@ elif version_info.major == 3:
 import HandToolResult
 
 def HTQuiz():
+    cross=[]
+    lPos=[[],[],[],[]] #letter position
     backgroundcolour = "#3A3A8E"
+    dbPos=[[],[]]
     choices = ["Sharp", "Grab", "False", "Offset Screwdriver", "Face", "Robertson", "True", "Yes", "Drawer", "Glancing"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     HTWindow=Tk()
@@ -29,8 +32,7 @@ def HTQuiz():
     side2=HTcanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=HTcanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=HTcanvas.create_line(975,75,25,75,width="3",fill="white")
-    cross=[]
-    lPos=[[],[],[],[]] #letter position
+
     #xsPos ysPos xePos yePos
     #s is start e is end
     for x in range (len(choices)):
@@ -55,7 +57,7 @@ def HTQuiz():
                 HTcanvas.delete(cross[iteration])
                 cross[iteration]=""
 
-    dbPos=[[],[]]
+
     def boxPositioning(x,y,text,bDB):
         space=5
         qxPos=x
@@ -64,11 +66,9 @@ def HTQuiz():
         used=False
 
         for word in text.split(" "):
-
             question=HTcanvas.create_text(qxPos,qyPos,text=word, anchor = "nw", font=('Helvetica', 15), fill="white")
             qbox=HTcanvas.bbox(question)
             qxPos=qbox[2]+space
-
             if (str(word) == str(bDB) and used==False):
                 dbPos[0]=qbox[2]+space
                 dbPos[1]=qbox[1]

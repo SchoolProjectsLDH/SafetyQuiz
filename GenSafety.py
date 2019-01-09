@@ -6,6 +6,9 @@ elif version_info.major == 3:
     from tkinter import *
 
 def GSQuiz():
+    cross=[]
+    lPos=[[],[],[],[]] #letter position
+    dbPos=[[],[]]
     backgroundcolour = "#460000"
     choices = ["Yes", "Clean", "Push Stick", "No", "Unplug", "False", "Permission", "Safety Glasses", "Certificate", "Never!"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
@@ -30,8 +33,6 @@ def GSQuiz():
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=mycanvas.create_line(975,75,25,75,width="3",fill="white")
 
-    cross=[]
-    lPos=[[],[],[],[]] #letter position
     #xsPos ysPos xePos yePos
     #s is start e is end
     for x in range (len(choices)):
@@ -56,7 +57,7 @@ def GSQuiz():
                 mycanvas.delete(cross[iteration])
                 cross[iteration]=""
 
-    dbPos=[[],[]]
+
     def boxPositioning(x,y,text,bDB):
         space=5
         qxPos=x
