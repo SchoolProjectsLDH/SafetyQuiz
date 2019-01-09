@@ -113,7 +113,6 @@ def GSQuiz():
                 else:
                     multiAnswer.append(0)
             if multiAnswer.count(1)==1:
-                print("Correct")
                 CheckCorrect[num]=True
             else:
                 CheckCorrect[num]=False
@@ -123,53 +122,17 @@ def GSQuiz():
 
     #QUESTION 1---
     #Placing question one at (25,325) with dropdown anchor '->' !!See boxPositioning function for more detail
-    boxPositioning(25,325,"Q1: Minor injuries do not need to be reported. -> ","->")
-    dBox(1)
-
-    #QUESTION 2--- (See question 1 for comments)
-
-    boxPositioning(25,365,"Q2: If you are uncertain about something in the shop, it is okay to ask a peer. ->","->")
-    dBox(2)
-
-    #QUESTION 3--- (See question 1 for comments)
-    boxPositioning(25,405,"Q3: Always get                           from the instructor before using the drill press.","get")
-    dBox(3)
-
-    #QUESTION 4--- (See question 1 for comments)
-    boxPositioning(25,445,"Q4: Students are not allowed to use equipment without having a safety                          for that equipment","safety")
-    dBox(4)
-
-    #QUESTION 5--- (See question 1 for comments)
-    boxPositioning(25,485,"Q5: Use a                          when cutting small pieces on a bandsaw.","a")
-    dBox(5)
-
-
-    #QUESTION 6--- (See question 1 for comments)
-    boxPositioning(25,525,"Q6: After use,                          and return the tool to its proper place","use,")
-    dBox(6)
-
-
-    #QUESTION 7--- (See question 1 for comments)
-    boxPositioning(25,565,"Q7: When using a machine you should always wear","wear")
-    dBox(7)
-
-
-    #QUESTION 8--- (See question 1 for comments)
-    boxPositioning(25,605,"Q8: It is okay to bring a drink into the shop as long as none of the equipment is running. ->","->")
-    WordChoice8 = StringVar(GSWindow)
-    dBox(8)
-
-
-    #QUESTION 9--- (See question 1 for comments)
-    text_canvas = mycanvas.create_text(25, 645, anchor = "nw", font=('Helvetica', 15), fill="white")
-    mycanvas.itemconfig(text_canvas, text="Q9: Once you have received your equipment certification you may use the equipment any time without" )
-    boxPositioning(25,685," permission. ->","->")
-    dBox(9)
-
-
-    #QUESTION 10--- (See question 1 for comments)
-    boxPositioning(25,725,"Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades.","Q10:")
-    dBox(10)
+    dyPos=325
+    q=["Q1: Minor injuries do not need to be reported. -> ","Q2: If you are uncertain about something in the shop, it is okay to ask a peer. ->","Q3: Always get                           from the instructor before using the drill press.","Q4: Students are not allowed to use equipment without having a safety                          for that equipment","Q5: Use a                          when cutting small pieces on a bandsaw.","Q6: After use,                          and return the tool to its proper place","Q7: When using a machine you should always wear","Q8: It is okay to bring a drink into the shop as long as none of the equipment is running. ->"," permission. ->","Q10:                          the tool/machine before replacing broken, dull or damaged bits or blades."]
+    after=["->","->","get","safety","a","use,","wear","->","->","Q10:"]
+    for x in range (len(q)):
+        if x==8:
+            text_canvas = mycanvas.create_text(25, 645, anchor = "nw", font=('Helvetica', 15), fill="white")
+            mycanvas.itemconfig(text_canvas, text="Q9: Once you have received your equipment certification you may use the equipment any time without" )
+            dyPos=685
+        boxPositioning(25,dyPos,q[x],after[x])
+        dBox(x+1)
+        dyPos=dyPos+40
 
     #SUBMITBUTTON---
     def GetResult():
