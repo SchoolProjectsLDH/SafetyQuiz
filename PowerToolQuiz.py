@@ -6,6 +6,9 @@ elif version_info.major == 3:
     from tkinter import *
 
 def PTQuiz():
+    cross=[]
+    lPos=[[],[],[],[]] #letter position
+    dbPos=[[],[]]
     backgroundcolour = "#0D6108"
     choices = ["Side","Angular","Machine","Grab","Long","Waste","Pull","Bind","Lock Out","Front","Break","Kickbacks","Jewelery","Speed"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False,False,False,False,False]
@@ -28,8 +31,7 @@ def PTQuiz():
     side2=PTcanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=PTcanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=PTcanvas.create_line(975,75,25,75,width="3",fill="white")
-    cross=[]
-    lPos=[[],[],[],[]] #letter position
+
     #xsPos ysPos xePos yePos
     #s is start e is end
     for x in range (len(choices)):
@@ -58,9 +60,6 @@ def PTQuiz():
                 PTcanvas.delete(cross[iteration])
                 cross[iteration]=""
 
-
-
-    dbPos=[[],[]]
     def boxPositioning(x,y,text,bDB,bDB2,skip,skip2):
         space=5
         qxPos=x
@@ -273,7 +272,7 @@ def PTQuiz():
     WordDropdown14 = OptionMenu(PTcanvas, WordChoice14, *choices).place(x=dbPos[0][13],y=dbPos[1][13])
     def change_dropdown14(*args):
         strike(WordChoice14.get())
-        if WordChoice14.get()=="Bind" or WordChoice13.get()=="Break":
+        if WordChoice14.get()=="Bind" or WordChoice14.get()=="Break":
             CheckCorrect[13]=True
         else:
             CheckCorrect[13]=False
