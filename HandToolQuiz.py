@@ -6,6 +6,7 @@ elif version_info.major == 3:
 import HandToolResult
 
 def HTQuiz():
+    backgroundcolour = "#3A3A8E"
     choices = ["Sharp", "Grab", "False", "Offset Screwdriver", "Face", "Robertson", "True", "Yes", "Drawer", "Glancing"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
     HTWindow=Tk()
@@ -14,11 +15,11 @@ def HTQuiz():
     HTWindow.resizable(False,False)
 
     HTcanvas = Canvas(HTWindow, width = 1000, height = 800)
-    HTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "#3A3A8E")
+    HTcanvas.create_rectangle(0, 0, 1000, 8000, fill = backgroundcolour)
     HTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg="#3A3A8E",fg="white").place(x=500,y=25, anchor = CENTER)
+    title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg=backgroundcolour,fg="white").place(x=500,y=25, anchor = CENTER)
 
     xPos=125
     yPos=100

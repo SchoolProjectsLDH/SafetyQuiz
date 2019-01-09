@@ -6,6 +6,7 @@ elif version_info.major == 3:
     from tkinter import *
 
 def PTQuiz():
+    backgroundcolour = "#0D6108"
     choices = ["Side","Angular","Machine","Grab","Long","Waste","Pull","Bind","Lock Out","Front","Break","Kickbacks","Jewelery","Speed"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False,False,False,False,False]
     PTWindow=Tk()
@@ -13,11 +14,11 @@ def PTQuiz():
     PTWindow.geometry("1000x800")
     PTWindow.resizable(False,False)
     PTcanvas = Canvas(PTWindow, width = 1000, height = 800)
-    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "#0D6108")
+    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = backgroundcolour)
     PTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="#0D6108",fg="white").place(x=500,y=25, anchor= CENTER)
+    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg=backgroundcolour,fg="white").place(x=500,y=25, anchor= CENTER)
 
     #WordBank
     xPos=125
