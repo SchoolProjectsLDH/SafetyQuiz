@@ -14,11 +14,11 @@ def GSQuiz():
     GSWindow.resizable(False,False)
 
     mycanvas = Canvas(GSWindow, width = 1000, height = 800)
-    mycanvas.create_rectangle(0, 0, 1000, 8000, fill = "black")
+    mycanvas.create_rectangle(0, 0, 1000, 8000, fill = "#460000")
     mycanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="black",fg="white").place(x=500,y=20, anchor= CENTER)
+    title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg="#460000",fg="white").place(x=500,y=20, anchor= CENTER)
 
     #alternate wordbank
     xPos=125

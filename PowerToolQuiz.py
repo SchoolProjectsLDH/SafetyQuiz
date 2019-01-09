@@ -13,11 +13,11 @@ def PTQuiz():
     PTWindow.geometry("1000x800")
     PTWindow.resizable(False,False)
     PTcanvas = Canvas(PTWindow, width = 1000, height = 800)
-    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "black")
+    PTcanvas.create_rectangle(0, 0, 1000, 8000, fill = "#0D6108")
     PTcanvas.pack(side = "top", fill = "both", expand = True)
 
     #title
-    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="black",fg="white").place(x=500,y=25, anchor= CENTER)
+    title=Label(PTcanvas,text="Power Tool Safety",font=("Helvetica",30),bg="#0D6108",fg="white").place(x=500,y=25, anchor= CENTER)
 
     #WordBank
     xPos=125
@@ -198,9 +198,9 @@ def PTQuiz():
 
 
     #QUESTION 7---
-    boxPositioning(25,525,"Q7: Never                           or force a jammed piece through the equipment. Shut the                           off and dislodge the","Never", "the",0,2)
+    boxPositioning(25,525,"Q7: Never                           or force a jammed piece through the equipment. Shut the                           off","Never", "the",0,2)
     text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="piece")
+    PTcanvas.itemconfig(text_canvas, text="and dislodge the piece")
     WordChoice9 = StringVar(PTWindow)
     WordChoice9.set('Answer Here')
     WordDropdown9 = OptionMenu(PTcanvas, WordChoice9, *choices).place(x=dbPos[0][8],y=dbPos[1][8])
