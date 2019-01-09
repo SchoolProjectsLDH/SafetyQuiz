@@ -60,23 +60,7 @@ def GSQuiz():
             if WordChoice[0].get() != choices[iteration] and WordChoice[1].get() != choices[iteration] and WordChoice[2].get() != choices[iteration] and WordChoice[3].get() != choices[iteration] and WordChoice[4].get() != choices[iteration] and WordChoice[5].get() != choices[iteration] and WordChoice[6].get() != choices[iteration] and WordChoice[7].get() != choices[iteration] and WordChoice[8].get() != choices[iteration] and WordChoice[9].get() != choices[iteration] and cross[iteration]!="":
                 mycanvas.delete(cross[iteration])
                 cross[iteration]=""
-        """
-        deselect=[]
-        for iteration in range(len(choices)):
 
-            for x in range(len(WordChoice)):
-                if WordChoice[x].get() != choices[iteration]:
-                    deselect.append(1)
-                else:
-                    deselect.append(0)
-            print(deselect)
-            if deselect.count(0)==1:
-                print ("count: ",deselect.count(0))
-                print("Clearing")
-                mycanvas.delete(cross[iteration])
-                cross[iteration]=""
-            deselect=[]
-        """
     #Creating constant positions for questions
     def boxPositioning(x,y,text,bDB):
         space=5
@@ -103,19 +87,27 @@ def GSQuiz():
         WordDropDown.append("")
     def dBox(num):
         num=num-1
-        multiAnswer=[]
         WordDropDown[num]=OptionMenu(mycanvas,WordChoice[num],*choices).place(x=dbPos[0],y=dbPos[1])
         def change_DropDown (*args):
             strike(WordChoice[num].get())
             for x in range (len(answer[num])):
                 if WordChoice[num].get()==answer[num][x]:
-                    multiAnswer.append(1)
+                    CheckCorrect[num] = True
+                    print("Correct")
+                    print(CheckCorrect)
+                    break
                 else:
+<<<<<<< HEAD
                     multiAnswer.append(0)
             if multiAnswer.count(1)==1:
                 CheckCorrect[num]=True
             else:
                 CheckCorrect[num]=False
+=======
+                    CheckCorrect[num] = False
+                    print(CheckCorrect)
+                    print("Incorrect")
+>>>>>>> 4f0298346cb3177895f9aed7de9e7215f60bc6ba
         WordChoice[num].trace('w',change_DropDown)
     #----------------------------------
     #START OF QUESTIONS------
