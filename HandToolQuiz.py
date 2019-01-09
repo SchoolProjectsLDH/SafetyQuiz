@@ -21,6 +21,7 @@ def HTQuiz():
     #title
     title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg=backgroundcolour,fg="white").place(x=500,y=25, anchor = CENTER)
 
+    #wordbank
     xPos=125
     yPos=100
     choicePos=[[],[]]

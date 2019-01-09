@@ -21,7 +21,7 @@ def GSQuiz():
     #title
     title=Label(mycanvas,text="General Safety",font=("Helvetica",30),bg=backgroundcolour,fg="white").place(x=500,y=20, anchor= CENTER)
 
-    #alternate wordbank
+    #wordbank
     xPos=125
     yPos=100
     choicePos=[[],[]]
@@ -77,9 +77,6 @@ def GSQuiz():
 
     #QUESTION 1---
     boxPositioning(25,325,"Q1: Minor injuries do not need to be reported. -> ","->")
-
-    #text_canvas = mycanvas.create_text(25, 325, anchor = "nw", font=('Helvetica', 15), fill="white")
-    #mycanvas.itemconfig(text_canvas, text="Q1: Minor injuries do not need to be reported. ->")
     WordChoice1 = StringVar(GSWindow)
     WordChoice1.set('Answer Here')
     WordDropdown1 = OptionMenu(mycanvas, WordChoice1, *choices).place(x=dbPos[0],y=dbPos[1])
@@ -95,8 +92,6 @@ def GSQuiz():
 
     #QUESTION 2---
     boxPositioning(25,365,"Q2: If you are uncertain about something in the shop, it is okay to ask a peer. ->","->")
-    #text_canvas = mycanvas.create_text(25, 365, anchor = "nw", font=('Helvetica', 15), fill="white")
-    #mycanvas.itemconfig(text_canvas, text="Q2: If you are uncertain about something in the shop, it is okay to ask a peer. ->")
     WordChoice2 = StringVar(GSWindow)
     WordChoice2.set('Answer Here')
     WordDropdown2 = OptionMenu(mycanvas, WordChoice2, *choices).place(x=dbPos[0],y=dbPos[1])
