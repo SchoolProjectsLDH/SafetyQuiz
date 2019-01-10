@@ -97,17 +97,9 @@ def GSQuiz():
                     print(CheckCorrect)
                     break
                 else:
-<<<<<<< HEAD
-                    multiAnswer.append(0)
-            if multiAnswer.count(1)==1:
-                CheckCorrect[num]=True
-            else:
-                CheckCorrect[num]=False
-=======
                     CheckCorrect[num] = False
                     print(CheckCorrect)
                     print("Incorrect")
->>>>>>> 4f0298346cb3177895f9aed7de9e7215f60bc6ba
         WordChoice[num].trace('w',change_DropDown)
     #----------------------------------
     #START OF QUESTIONS------

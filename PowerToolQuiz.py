@@ -56,7 +56,7 @@ def PTQuiz():
             cross[sIndex]=PTcanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width='3',fill='white')
 
         for iteration in range(0,14):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and WordChoice11.get() != choices[iteration] and WordChoice12.get() != choices[iteration]  and WordChoice13.get() != choices[iteration] and WordChoice14.get() != choices[iteration]and cross[iteration]!="":
+            if WordChoice[0].get() != choices[iteration] and WordChoice[1].get() != choices[iteration] and WordChoice[2].get() != choices[iteration] and WordChoice[3].get() != choices[iteration] and WordChoice[4].get() != choices[iteration] and WordChoice[5].get() != choices[iteration] and WordChoice[6].get() != choices[iteration] and WordChoice[7].get() != choices[iteration] and WordChoice[8].get() != choices[iteration] and WordChoice[9].get() != choices[iteration] and WordChoice[10].get() != choices[iteration] and WordChoice[11].get() != choices[iteration]  and WordChoice[12].get() != choices[iteration] and WordChoice[13].get() != choices[iteration]and cross[iteration]!="":
                 PTcanvas.delete(cross[iteration])
                 cross[iteration]=""
 
@@ -88,195 +88,48 @@ def PTQuiz():
                 dbPos[0].append(qbox[2]+space)
                 dbPos[1].append(qbox[1])
                 used2=True
-
+    WordChoice=[]
+    WordDropDown=[]
+    answer=[["Jewelery"],["Long"],["Kickbacks"],["Angular"],["Front"],["Side"],["Speed"],["Grab"],["Pull"],["Machine"],["Waste"],["Lock Out"],["Break"],["Bind"]]
+    for x in range(len(choices)):
+        WordChoice.append(StringVar(PTWindow))
+        WordChoice[x].set('Answer Here')
+        WordDropDown.append("")
+    def dBox(num):
+        num=num-1
+        WordDropDown[num]=OptionMenu(PTcanvas,WordChoice[num],*choices).place(x=dbPos[0][num],y=dbPos[1][num])
+        def changeDropDown(*args):
+            strike(WordChoice[num].get())
+            if WordChoice[num].get()==answer[num]:
+                CheckCorrect[num]=True
+            else:
+                CheckCorrect[num]=False
+        WordChoice[num].trace('w',changeDropDown)
 
     #QUESTION 1---
-    boxPositioning(25,285,"Q1: Remove all                           and tie back                           hair","all","back",0,0)
-    WordChoice1 = StringVar(PTWindow)
-    WordChoice1.set('Answer Here')
-    WordDropdown1 = OptionMenu(PTcanvas, WordChoice1, *choices).place(x=dbPos[0][0],y=dbPos[1][0])
-    def change_dropdown1(*args):
-        strike(WordChoice1.get())
-        if WordChoice1.get() == "Jewelery":
-            CheckCorrect[0] = True
-        else:
-            CheckCorrect[0] = False
-    WordChoice1.trace('w', change_dropdown1)
+    q=["Q1: Remove all                           and tie back                           hair","Q2: Watch for                           when cutting small pieces","Q3: When making                           cuts ensure the blade has adequate clearance","Q4: Always operate the drill press from the                           ,never from the                           ","Q5: Check for the proper                           , drill size and material you are working on","Q6: Never attempt to                           a piece if it slips from the clamp","Q7: Never                           or force a jammed piece through the equipment. Shut the                           off","Q8: When cutting with the band saw, the blade should cut on the                           side of the work piece ","Q9: Use the                           when changing blades","blade to                           or                           "]
+    after=["all","for","making","the","proper","to","Never","the","the","to"]
+    after2=["back","none","none","the","none","none", "the","none","none","or"]
+    skip=[0,0,0,2,0,0,0,3,0,0]
+    skip2=[0,0,0,3,0,0,2,0,0,0]
+    dyPos=285
 
-    #QUESTION 1 box 2---
-    WordChoice2 = StringVar(PTWindow)
-    WordChoice2.set('Answer Here')
-    WordDropdown2 = OptionMenu(PTcanvas, WordChoice2, *choices).place(x=dbPos[0][1],y=dbPos[1][1])
-    def change_dropdown2(*args):
-        strike(WordChoice2.get())
-        if WordChoice2.get()=="Long":
-            CheckCorrect[1]=True
-        else:
-            CheckCorrect[1]==False
-    WordChoice2.trace('w', change_dropdown2)
+    for x in range (len(q)):
+        boxPositioning(25,dyPos,q[x],after[x],after2[x],skip[x],skip2[x])
 
-
-    #QUESTION 2---
-    boxPositioning(25,325,"Q2: Watch for                           when cutting small pieces","for","none",0,0)
-    WordChoice3 = StringVar(PTWindow)
-    WordChoice3.set('Answer Here')
-    WordDropdown3 = OptionMenu(PTcanvas, WordChoice3, *choices).place(x=dbPos[0][2],y=dbPos[1][2])
-    def change_dropdown3(*args):
-        strike(WordChoice3.get())
-        if WordChoice3.get()=="Kickbacks":
-            CheckCorrect[2]=True
-        else:
-            CheckCorrect[2]=False
-    WordChoice3.trace('w', change_dropdown3)
-
-    #QUESTION 3---
-    boxPositioning(25,365,"Q3: When making                           cuts ensure the blade has adequate clearance","making","none",0,0)
-    WordChoice4 = StringVar(PTWindow)
-    WordChoice4.set('Answer Here')
-    WordDropdown4 = OptionMenu(PTcanvas, WordChoice4, *choices).place(x=dbPos[0][3],y=dbPos[1][3])
-    def change_dropdown4(*args):
-        strike(WordChoice4.get())
-        if WordChoice4.get()=="Angular":
-            CheckCorrect[3]=True
-        else:
-            CheckCorrect[3]=False
-    WordChoice4.trace('w', change_dropdown4)
-
-    #QUESTION 4---
-    boxPositioning(25,405,"Q4: Always operate the drill press from the                           ,never from the                           ","the","the",2,3)
-    text_canvas = PTcanvas.create_text(25, 405, anchor = "nw", font=('Helvetica', 15), fill="white")
-    WordChoice5 = StringVar(PTWindow)
-    WordChoice5.set('Answer Here')
-    WordDropdown5 = OptionMenu(PTcanvas, WordChoice5, *choices).place(x=dbPos[0][4],y=dbPos[1][4])
-    def change_dropdown5(*args):
-        strike(WordChoice5.get())
-        if WordChoice5.get()=="Front":
-            CheckCorrect[4]=True
-        else:
-            CheckCorrect[4]=False
-    WordChoice5.trace('w', change_dropdown5)
-
-    WordChoice6 = StringVar(PTWindow)
-    WordChoice6.set('Answer Here')
-    WordDropdown6 = OptionMenu(PTcanvas, WordChoice6, *choices).place(x=dbPos[0][5],y=dbPos[1][5])
-    def change_dropdown6(*args):
-        strike(WordChoice6.get())
-        if WordChoice6.get()=="Side":
-            CheckCorrect[5]=True
-        else:
-            CheckCorrect[5]=False
-    WordChoice6.trace('w', change_dropdown6)
-
-
-    #QUESTION 5---
-    boxPositioning(25,445,"Q5: Check for the proper                           , drill size and material you are working on","proper","none",0,0)
-    WordChoice7 = StringVar(PTWindow)
-    WordChoice7.set('Answer Here')
-    WordDropdown7 = OptionMenu(PTcanvas, WordChoice7, *choices).place(x=dbPos[0][6],y=dbPos[1][6])
-    def change_dropdown7(*args):
-        strike(WordChoice7.get())
-        if WordChoice7.get()=="Speed":
-            CheckCorrect[6]=True
-        else:
-            CheckCorrect[6]=False
-    WordChoice7.trace('w', change_dropdown7)
-
-
-    #QUESTION 6---
-    boxPositioning(25,485,"Q6: Never attempt to                           a piece if it slips from the clamp","to","none",0,0)
-
-    WordChoice8 = StringVar(PTWindow)
-    WordChoice8.set('Answer Here')
-    WordDropdown8 = OptionMenu(PTcanvas, WordChoice8, *choices).place(x=dbPos[0][7],y=dbPos[1][7])
-    def change_dropdown8(*args):
-        strike(WordChoice8.get())
-        if WordChoice8.get()=="Grab":
-            CheckCorrect[7]=True
-        else:
-            CheckCorrect[7]=False
-    WordChoice8.trace('w', change_dropdown8)
-
-
-    #QUESTION 7---
-    boxPositioning(25,525,"Q7: Never                           or force a jammed piece through the equipment. Shut the                           off","Never", "the",0,2)
-    text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="and dislodge the piece")
-    WordChoice9 = StringVar(PTWindow)
-    WordChoice9.set('Answer Here')
-    WordDropdown9 = OptionMenu(PTcanvas, WordChoice9, *choices).place(x=dbPos[0][8],y=dbPos[1][8])
-    def change_dropdown9(*args):
-        strike(WordChoice9.get())
-        if WordChoice9.get()=="Pull":
-            CheckCorrect[8]=True
-        else:
-            CheckCorrect[8]=False
-    WordChoice9.trace('w', change_dropdown9)
-    WordChoice10 = StringVar(PTWindow)
-    WordChoice10.set('Answer Here')
-    WordDropdown10 = OptionMenu(PTcanvas, WordChoice10, *choices).place(x=dbPos[0][9],y=dbPos[1][9])
-    def change_dropdown10(*args):
-        strike(WordChoice10.get())
-        if WordChoice10.get()=="Machine":
-            CheckCorrect[9]=True
-        else:
-            CheckCorrect[9]=False
-    WordChoice10.trace('w', change_dropdown10)
-
-
-    #QUESTION 8---
-    boxPositioning(25,605,"Q8: When cutting with the band saw, the blade should cut on the                           side of the work piece ","the","none",3,0)
-    WordChoice11 = StringVar(PTWindow)
-    WordChoice11.set('Answer Here')
-    WordDropdown11 = OptionMenu(PTcanvas, WordChoice11, *choices).place(x=dbPos[0][10],y=dbPos[1][10])
-    def change_dropdown11(*args):
-        strike(WordChoice11.get())
-        if WordChoice11.get()=="Waste":
-            CheckCorrect[10]=True
-        else:
-            CheckCorrect[10]=False
-    WordChoice11.trace('w', change_dropdown11)
-
-
-    #QUESTION 9---
-    boxPositioning(25,645,"Q9: Use the                           when changing blades","the","none",0,0)
-    WordChoice12 = StringVar(PTWindow)
-    WordChoice12.set('Answer Here')
-    WordDropdown12 = OptionMenu(PTcanvas, WordChoice12, *choices).place(x=dbPos[0][11],y=dbPos[1][11])
-    def change_dropdown12(*args):
-        strike(WordChoice12.get())
-        if WordChoice12.get()=="Lock Out":
-            CheckCorrect[11]=True
-        else:
-            CheckCorrect[11]=False
-    WordChoice12.trace('w', change_dropdown12)
-
-
-
-    #QUESTION 10---
-    text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")
-    PTcanvas.itemconfig(text_canvas, text="Q10: When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
-    boxPositioning(25,725,"blade to                           or                           ","to","or",0,0)
-    WordChoice13 = StringVar(PTWindow)
-    WordChoice13.set('Answer Here')
-    WordDropdown13 = OptionMenu(PTcanvas, WordChoice13, *choices).place(x=dbPos[0][12],y=dbPos[1][12])
-    def change_dropdown13(*args):
-        strike(WordChoice13.get())
-        if WordChoice13.get()=="Break" or WordChoice13.get()=="Bind":
-            CheckCorrect[12]=True
-        else:
-            CheckCorrect[12]=False
-    WordChoice13.trace('w', change_dropdown13)
-
-    WordChoice14 = StringVar(PTWindow)
-    WordChoice14.set('Answer Here')
-    WordDropdown14 = OptionMenu(PTcanvas, WordChoice14, *choices).place(x=dbPos[0][13],y=dbPos[1][13])
-    def change_dropdown14(*args):
-        strike(WordChoice14.get())
-        if WordChoice14.get()=="Bind" or WordChoice14.get()=="Break":
-            CheckCorrect[13]=True
-        else:
-            CheckCorrect[13]=False
-    WordChoice14.trace('w', change_dropdown14)
+        dyPos=dyPos+40
+        if x ==6:
+            text_canvas = PTcanvas.create_text(25, 565, anchor = "nw", font=('Helvetica', 15), fill="white")
+            PTcanvas.itemconfig(text_canvas, text="and dislodge the piece")
+            dyPos=605
+        elif x==8:
+            text_canvas = PTcanvas.create_text(25, 685, anchor = "nw", font=('Helvetica', 15), fill="white")
+            PTcanvas.itemconfig(text_canvas, text="Q10: When using the band saw, plan your cuts carefully. Saw curves gravdually. Sudden twist will cause the" )
+            dyPos=725
+    for x in range(len(choices)):
+        dBox(x)
+        #have to be second because there was a problem were it would not print drop boxes after q7. the reason is that there has already been 10 drop boxe that have been creazted for the 10 questions, but there are 14 drop boxes. you can't change the for loop to 14 because there is only 10 questions and you would get an error saying it is out of range so that is why you need a second for loops
+        #problem not striking out because I forgot to change the last 4 into [#], before the change it would give an error sayling thatwordhoice# is not defined
 
     #SUBMITBUTTON---
     def GetResult():
