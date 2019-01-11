@@ -53,7 +53,7 @@ def HTQuiz():
             cross[sIndex]=HTcanvas.create_line(lPos[0][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,lPos[2][sIndex],(lPos[1][sIndex]+lPos[3][sIndex])/2,width='3',fill='white')
 
         for iteration in range(0,10):
-            if WordChoice1.get() != choices[iteration] and WordChoice2.get() != choices[iteration] and WordChoice3.get() != choices[iteration] and WordChoice4.get() != choices[iteration] and WordChoice5.get() != choices[iteration] and WordChoice6.get() != choices[iteration] and WordChoice7.get() != choices[iteration] and WordChoice8.get() != choices[iteration] and WordChoice9.get() != choices[iteration] and WordChoice10.get() != choices[iteration] and cross[iteration]!="":
+            if WordChoice[0].get() != choices[iteration] and WordChoice[1].get() != choices[iteration] and WordChoice[2].get() != choices[iteration] and WordChoice[3].get() != choices[iteration] and WordChoice[4].get() != choices[iteration] and WordChoice[5].get() != choices[iteration] and WordChoice[6].get() != choices[iteration] and WordChoice[7].get() != choices[iteration] and WordChoice[8].get() != choices[iteration] and WordChoice[9].get() != choices[iteration] and cross[iteration]!="":
                 HTcanvas.delete(cross[iteration])
                 cross[iteration]=""
 
@@ -73,137 +73,41 @@ def HTQuiz():
                 dbPos[0]=qbox[2]+space
                 dbPos[1]=qbox[1]
                 used=True
+    WordChoice=[]
+    WordDropDown=[]
+    answer=[["False"],["Yes","True"],["Drawer"],["Face"],["Glancing"],["Robertson"],["Offset Screwdriver"],["Sharp"],["Grab"],["Yes","True"]]
+    for x in range(len(choices)):
+        WordChoice.append(StringVar(HTWindow))
+        WordChoice[x].set('Answer Here          ')
+        WordDropDown.append("")
+    def dBox(num):
+        num=num-1
+        WordDropDown[num]=OptionMenu(HTcanvas, WordChoice[num], *choices).place(x=dbPos[0],y=dbPos[1])
+        def changeDropDown (*args):
+            strike(WordChoice[num].get())
+            for x in range (len(answer[num])):
+                if WordChoice[num].get()==answer[num][x]:
+                    CheckCorrect[num] = True
+                    print("Correct")
+                    print(CheckCorrect)
+                    print(answer[num][x])
+                    break
+                else:
+                    CheckCorrect[num] = False
+                    print(CheckCorrect)
+                    print("Incorrect")
+                    print(answer[num][x])
 
+        WordChoice[num].trace('w',changeDropDown)
     #QUESTION 1---
-    boxPositioning(25, 325,"Q1: You should use a long throat clamp instead of a deep throat clamp. ->","->")
-    WordChoice1 = StringVar(HTWindow)
-    WordChoice1.set('Answer Here          ')
-    WordDropdown1 = OptionMenu(HTcanvas, WordChoice1, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown1(*args):
-        strike(WordChoice1.get())
-        if WordChoice1.get() == "False" or WordChoice1.get() == "No":
-            CheckCorrect[0] = True
-        else:
-            CheckCorrect[0] = False
-
-    WordChoice1.trace('w', change_dropdown1)
-
-    #QUESTION 2---
-    boxPositioning(25, 365,"Q2: Without padding, a clamp can leave marks on your work ->","->")
-    WordChoice2 = StringVar(HTWindow)
-    WordChoice2.set('Answer Here          ')
-    WordDropdown2 = OptionMenu(HTcanvas, WordChoice2, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown2(*args):
-        strike(WordChoice2.get())
-        if WordChoice2.get()=="Yes" or WordChoice2.get()=="True":
-            CheckCorrect[1]=True
-        else:
-            CheckCorrect[1]==False
-    WordChoice2.trace('w', change_dropdown2)
-
-    #QUESTION 3---
-    boxPositioning(25, 405,"Q3: We store C clamps in the                               .","the")
-    WordChoice3 = StringVar(HTWindow)
-    WordChoice3.set('Answer Here          ')
-    WordDropdown3 = OptionMenu(HTcanvas, WordChoice3, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown3(*args):
-        strike(WordChoice3.get())
-        if WordChoice3.get()=="Drawer":
-            CheckCorrect[2]=True
-        else:
-            CheckCorrect[2]=False
-    WordChoice3.trace('w', change_dropdown3)
-
-    #QUESTION 4---
-    boxPositioning(25, 445,"Q4: For hammers, you should use the                               to hit an object","the")
-    WordChoice4 = StringVar(HTWindow)
-    WordChoice4.set('Answer Here          ')
-    WordDropdown4 = OptionMenu(HTcanvas, WordChoice4, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown4(*args):
-        strike(WordChoice4.get())
-        if WordChoice4.get()=="Face":
-            CheckCorrect[3]=True
-        else:
-            CheckCorrect[3]=False
-    WordChoice4.trace('w', change_dropdown4)
-
-    #QUESTION 5---
-    boxPositioning(25, 485,"Q5: For a hammer, You should avoid                               blows when hitting an object.","avoid")
-    WordChoice5 = StringVar(HTWindow)
-    WordChoice5.set('Answer Here          ')
-    WordDropdown5 = OptionMenu(HTcanvas, WordChoice5, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown5(*args):
-        strike(WordChoice5.get())
-        if WordChoice5.get()=="Glancing":
-            CheckCorrect[4]=True
-        else:
-            CheckCorrect[4]=False
-    WordChoice5.trace('w', change_dropdown5)
-
-    #QUESTION 6---
-    boxPositioning(25, 525,"Q6: The square head screwdriver is called a:","a:")
-    WordChoice6 = StringVar(HTWindow)
-    WordChoice6.set('Answer Here          ')
-    WordDropdown6 = OptionMenu(HTcanvas, WordChoice6, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown6(*args):
-        strike(WordChoice6.get())
-        if WordChoice6.get()=="Robertson":
-            CheckCorrect[5]=True
-        else:
-            CheckCorrect[5]=False
-    WordChoice6.trace('w', change_dropdown6)
-
-    #QUESTION 7---
-    boxPositioning(25, 565,"Q7: You should use an                               in tight areas","an")
-    WordChoice7 = StringVar(HTWindow)
-    WordChoice7.set('Answer Here          ')
-    WordDropdown7 = OptionMenu(HTcanvas, WordChoice7, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown7(*args):
-        strike(WordChoice7.get())
-        if WordChoice7.get()=="Offset Screwdriver":
-            CheckCorrect[6]=True
-        else:
-            CheckCorrect[6]=False
-    WordChoice7.trace('w', change_dropdown7)
-
-    #QUESTION 8---
-    boxPositioning(25, 605,"Q8: You should use a                               blade when cutting","a")
-    WordChoice8 = StringVar(HTWindow)
-    WordChoice8.set('Answer Here          ')
-    WordDropdown8 = OptionMenu(HTcanvas, WordChoice8, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown8(*args):
-        strike(WordChoice8.get())
-        if WordChoice8.get()=="Sharp":
-            CheckCorrect[7]=True
-        else:
-            CheckCorrect[7]=False
-    WordChoice8.trace('w', change_dropdown8)
-
-    #QUESTION 9---
-    boxPositioning(25, 645,"Q9: Do not                               a falling knife","not")
-    WordChoice9 = StringVar(HTWindow)
-    WordChoice9.set('Answer Here          ')
-    WordDropdown9 = OptionMenu(HTcanvas, WordChoice9, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown9(*args):
-        strike(WordChoice9.get())
-        if WordChoice9.get()=="Grab":
-            CheckCorrect[8]=True
-        else:
-            CheckCorrect[8]=False
-    WordChoice9.trace('w', change_dropdown9)
-
-    #QUESTION 10---
-    boxPositioning(25, 685,"Q10: You can leave hot glue guns unattended if unplugged. ->","->")
-    WordChoice10 = StringVar(HTWindow)
-    WordChoice10.set('Answer Here          ')
-    WordDropdown10 = OptionMenu(HTcanvas, WordChoice10, *choices).place(x=dbPos[0],y=dbPos[1])
-    def change_dropdown10(*args):
-        strike(WordChoice10.get())
-        if WordChoice10.get()=="Yes" or WordChoice10.get()=="True":
-            CheckCorrect[9]=True
-        else:
-            CheckCorrect[9]=False
-    WordChoice10.trace('w', change_dropdown10)
+    q=["Q1: You should use a long throat clamp instead of a deep throat clamp. ->","Q2: Without padding, a clamp can leave marks on your work ->","Q3: We store C clamps in the                               .","Q4: For hammers, you should use the                               to hit an object","Q5: For a hammer, You should avoid                               blows when hitting an object.","Q6: The square head screwdriver is called a:","Q7: You should use an                               in tight areas","Q8: You should use a                               blade when cutting","Q9: Do not                               a falling knife","Q10: You can leave hot glue guns unattended if unplugged. ->"]
+    after=["->","->","the","the","avoid","a:","an","a","not","->"]
+    qyPos=325
+    #QUESTION 1---
+    for x in range (len(q)):
+        boxPositioning(25,qyPos,q[x],after[x])
+        dBox(x+1)
+        qyPos=qyPos+40
 
     #SUBMITBUTTON---
     def GetHTResult():
