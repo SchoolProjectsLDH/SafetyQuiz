@@ -96,14 +96,21 @@ def PTQuiz():
         WordChoice[x].set('Answer Here')
         WordDropDown.append("")
     def dBox(num):
-        num=num-1
         WordDropDown[num]=OptionMenu(PTcanvas,WordChoice[num],*choices).place(x=dbPos[0][num],y=dbPos[1][num])
         def changeDropDown(*args):
             strike(WordChoice[num].get())
-            if WordChoice[num].get()==answer[num]:
-                CheckCorrect[num]=True
-            else:
-                CheckCorrect[num]=False
+            for x in range (len(answer[num])):
+                if WordChoice[num].get()==answer[num][x]:
+                    CheckCorrect[num] = True
+                    print("Correct")
+                    print(CheckCorrect)
+                    print(answer[num][x])
+                    break
+                else:
+                    CheckCorrect[num] = False
+                    print(CheckCorrect)
+                    print("Incorrect")
+                    print(answer[num][x])
         WordChoice[num].trace('w',changeDropDown)
 
     #QUESTION 1---
