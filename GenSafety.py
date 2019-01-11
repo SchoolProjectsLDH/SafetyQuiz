@@ -70,7 +70,6 @@ def GSQuiz():
         space=5#Sets the space between the beggining word and the dropdown left side
         qxPos=x#Question's x position
         qyPos=y#Question's y position
-        q1="Q1: Minor injuries do not need to be reported. -> "#Initializing with first question
         used=False#Initializing with the state as empty
         for word in text.split(" "):#Splite the strike into individual words
             question=mycanvas.create_text(qxPos,qyPos,text=word, anchor = "nw", font=('Helvetica', 15), fill="white")#Places the questions on the canvas

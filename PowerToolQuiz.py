@@ -63,7 +63,6 @@ def PTQuiz():
         space=5
         qxPos=x
         qyPos=y
-        q1="Q1: Minor injuries do not need to be reported. -> "
         used=False
         used2=False
         tCount=0
