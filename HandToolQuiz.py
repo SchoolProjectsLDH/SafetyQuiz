@@ -27,7 +27,6 @@ def HTQuiz():
     #wordbank
     xPos=125
     yPos=100
-    choicePos=[[],[]]
     side1=HTcanvas.create_line(25,75,25,250,width="3",fill="white")
     side2=HTcanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=HTcanvas.create_line(975,250,975,75,width="3",fill="white")

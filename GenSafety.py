@@ -33,7 +33,6 @@ def GSQuiz():
     #wordbank
     xPos=125#Initializing word starting positions
     yPos=100#See above comment
-    choicePos=[[],[]]#Recording location of words
     side1=mycanvas.create_line(25,75,25,250,width="3",fill="white")#Creating the 4 borders of wordbank
     side2=mycanvas.create_line(25,250,975,250,width="3",fill="white")
     side3=mycanvas.create_line(975,250,975,75,width="3",fill="white")
