@@ -6,22 +6,32 @@ elif version_info.major == 3:
 import HandToolResult
 
 def HTQuiz():
+    #SEE GenSafety.py FOR DETAILED COMMENTS-------
+    #------------------------------------
+
+    #Variables
+    WordChoice=[]
+    WordDropDown=[]
+    answer=[["False"],["Yes","True"],["Drawer"],["Face"],["Glancing"],["Robertson"],["Offset Screwdriver"],["Sharp"],["Grab"],["Yes","True"]]
     cross=[]
-    lPos=[[],[],[],[]] #letter position
+    lPos=[[],[],[],[]]
     backgroundcolour = "#3A3A8E"
     dbPos=[[],[]]
     choices = ["Sharp", "Grab", "False", "Offset Screwdriver", "Face", "Robertson", "True", "Yes", "Drawer", "Glancing"]
     CheckCorrect = [False,False,False,False,False,False,False,False,False,False]
+
+    #Tkinter window
     HTWindow=Tk()
     HTWindow.title("Hand Tool Quiz")
     HTWindow.geometry("1000x800")
     HTWindow.resizable(False,False)
 
+    #Canvas
     HTcanvas = Canvas(HTWindow, width = 1000, height = 800)
     HTcanvas.create_rectangle(0, 0, 1000, 8000, fill = backgroundcolour)
     HTcanvas.pack(side = "top", fill = "both", expand = True)
 
-    #title
+    #Title
     title=Label(HTcanvas,text="Hand Tools",font=("Helvetica",30),bg=backgroundcolour,fg="white").place(x=500,y=25, anchor = CENTER)
 
     #wordbank
@@ -32,8 +42,7 @@ def HTQuiz():
     side3=HTcanvas.create_line(975,250,975,75,width="3",fill="white")
     side4=HTcanvas.create_line(975,75,25,75,width="3",fill="white")
 
-    #xsPos ysPos xePos yePos
-    #s is start e is end
+    #Recording words in wordbank
     for x in range (len(choices)):
         op=HTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
         bbox=HTcanvas.bbox(op)
@@ -46,6 +55,7 @@ def HTQuiz():
     for x in range(len(choices)):
         cross.append("")
 
+    #Strikethrough the use words
     def strike(selected):
         sIndex=choices.index(selected)
         if(cross[sIndex]==""):
@@ -56,12 +66,11 @@ def HTQuiz():
                 HTcanvas.delete(cross[iteration])
                 cross[iteration]=""
 
-
+    #Placing the questions in constant positions
     def boxPositioning(x,y,text,bDB):
         space=5
         qxPos=x
         qyPos=y
-        q1="Q1: Minor injuries do not need to be reported. -> "
         used=False
 
         for word in text.split(" "):
@@ -72,9 +81,8 @@ def HTQuiz():
                 dbPos[0]=qbox[2]+space
                 dbPos[1]=qbox[1]
                 used=True
-    WordChoice=[]
-    WordDropDown=[]
-    answer=[["False"],["Yes","True"],["Drawer"],["Face"],["Glancing"],["Robertson"],["Offset Screwdriver"],["Sharp"],["Grab"],["Yes","True"]]
+
+    #Making the dropdowns
     for x in range(len(choices)):
         WordChoice.append(StringVar(HTWindow))
         WordChoice[x].set('Answer Here          ')
@@ -96,13 +104,14 @@ def HTQuiz():
                     print(CheckCorrect)
                     print("Incorrect")
                     print(answer[num][x])
-
         WordChoice[num].trace('w',changeDropDown)
-    #QUESTION 1---
+
+    #Setting questions
     q=["Q1: You should use a long throat clamp instead of a deep throat clamp. ->","Q2: Without padding, a clamp can leave marks on your work ->","Q3: We store C clamps in the                               .","Q4: For hammers, you should use the                               to hit an object","Q5: For a hammer, You should avoid                               blows when hitting an object.","Q6: The square head screwdriver is called a:","Q7: You should use an                               in tight areas","Q8: You should use a                               blade when cutting","Q9: Do not                               a falling knife","Q10: You can leave hot glue guns unattended if unplugged. ->"]
     after=["->","->","the","the","avoid","a:","an","a","not","->"]
     qyPos=325
-    #QUESTION 1---
+
+
     for x in range (len(q)):
         boxPositioning(25,qyPos,q[x],after[x])
         dBox(x+1)
@@ -113,4 +122,5 @@ def HTQuiz():
         HTWindow.destroy()
         HandToolResult.ReturnHTMark(CheckCorrect)
     Button(HTcanvas, text="Submit Answers", command=GetHTResult).place(x=850,y=700)
+
     HTWindow.mainloop()
