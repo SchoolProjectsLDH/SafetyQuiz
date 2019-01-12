@@ -91,7 +91,7 @@ def GSQuiz():
         def change_DropDown (*args):#Function calls when a dropdown is changed
             strike(WordChoice[num].get())#strikethrough the word that was choces
             for x in range (len(answer[num])):#Iterate through words and check if it is correct
-                if WordChoice[num].get()==answer[num][x]:#If the indexed answer in teh correct positions equal what the user chose
+                if WordChoice[num].get()==answer[num][x]:#If the indexed answer in the correct positions equal what the user chose
                     #Set as correct
                     CheckCorrect[num] = True
                     print("Correct")
