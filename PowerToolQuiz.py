@@ -11,7 +11,7 @@ def PTQuiz():
     #Variables and list
     WordChoice=[]
     WordDropDown=[]
-    answer=[["Jewelery"],["Long"],["Kickbacks"],["Angular"],["Front"],["Side"],["Speed"],["Grab"],["Pull"],["Machine"],["Waste"],["Lock Out"],["Break"],["Bind"]]
+    answer=[["Jewelery"],["Long"],["Kickbacks"],["Angular"],["Front"],["Side"],["Speed"],["Grab"],["Pull"],["Machine"],["Waste"],["Lock Out"],["Break","Bind"],["Bind","Break"]]
     cross=[]
     lPos=[[],[],[],[]]
     dbPos=[[],[]]
@@ -45,6 +45,8 @@ def PTQuiz():
     #places the options (words) inside the box
     for x in range (len(choices)):
         op=PTcanvas.create_text(xPos,yPos,text=choices[x],font=('Helvetica', 15),fill="white")
+        bbox=PTcanvas.bbox(op) #creates a list called bbox and sets it to the positions of the words
+        PTcanvas.bbox(op)#Mapping the location of the word
         for y in range (4):
             lPos[y].append(bbox[y])
         xPos=xPos+185
@@ -79,7 +81,7 @@ def PTQuiz():
         tCount2=0
         for word in text.split(" "):
             question=PTcanvas.create_text(qxPos,qyPos,text=word, anchor = "nw", font=('Helvetica', 15), fill="white")
-            qbox=PTcanvas.bbox(question)
+            qbox=PTcanvas.bbox(question) #creates a list called qbox and sets it to the start and end coordinates of the word
             qxPos=qbox[2]+space
             if (skip!=0 or skip2!=0):
                 if(str(word)==str(bDB)and skip!=0):
@@ -108,10 +110,17 @@ def PTQuiz():
         WordDropDown[num]=OptionMenu(PTcanvas,WordChoice[num],*choices).place(x=dbPos[0][num],y=dbPos[1][num])
         def changeDropDown(*args):
             strike(WordChoice[num].get())
-            if WordChoice[num].get()==answer[num]:
-                CheckCorrect[num]=True
-            else:
-                CheckCorrect[num]=False
+            for x in range (len(answer[num])):#Iterate through words and check if it is correct
+                if WordChoice[num].get()==answer[num][x]:#If the indexed answer in teh correct positions equal what the user chose
+                    #Set as correct
+                    CheckCorrect[num] = True
+                    print("Correct")
+                    print(CheckCorrect)
+                    break#End for loop
+                else:
+                    CheckCorrect[num] = False#If none of the cells are equal to chosen word, the user got it wrong
+                    print(CheckCorrect)
+                    print("Incorrect")
         WordChoice[num].trace('w',changeDropDown)
 
     #QUESTIONS---
