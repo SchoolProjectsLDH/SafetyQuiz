@@ -7,4 +7,4 @@ To-do list in order of completion
 4. ~~Commenting~~
 5. ~~Check-in with teacher~~
 6. ~~Final revision~~
-7. Presentation
+7. ~~Presentation~~
